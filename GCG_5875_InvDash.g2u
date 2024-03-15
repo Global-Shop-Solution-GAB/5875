@@ -1,0 +1,1864 @@
+Program.Sub.ScreenSU.Start
+Gui.fInvDash..Create
+Gui.fInvDash..Caption("Inventory Dashboard")
+Gui.fInvDash..Size(28740,14280)
+Gui.fInvDash..MinX(0)
+Gui.fInvDash..MinY(0)
+Gui.fInvDash..Position(0,0)
+Gui.fInvDash..BackColor(-2147483633)
+Gui.fInvDash..MousePointer(0)
+Gui.fInvDash..Event(UnLoad,fInvDash_UnLoad)
+Gui.fInvDash..Sizeable(False)
+Gui.fInvDash.cmdNewPart.Create(Button)
+Gui.fInvDash.cmdNewPart.Size(1605,465)
+Gui.fInvDash.cmdNewPart.Position(135,13440)
+Gui.fInvDash.cmdNewPart.Caption("New Part")
+Gui.fInvDash.cmdNewPart.Event(Click,cmdNewPart_Click)
+Gui.fInvDash.GsGCInvDash.Create(GsGridControl)
+Gui.fInvDash.GsGCInvDash.Size(28560,13395)
+Gui.fInvDash.GsGCInvDash.Position(-45,-30)
+Gui.fInvDash.GsGCInvDash.Event(RowCellClick,GsGCInvDash_RowCellClick)
+Gui.fInvDash.GsGCInvDash.Event(CellValueChanged,GsGCInvDash_CellValueChanged)
+Gui.fInvDash.cmdSaveChng.Create(Button)
+Gui.fInvDash.cmdSaveChng.Size(1605,465)
+Gui.fInvDash.cmdSaveChng.Position(1950,13440)
+Gui.fInvDash.cmdSaveChng.Caption("Save Changes")
+Gui.fInvDash.cmdSaveChng.Event(Click,cmdSaveChng_Click)
+Gui.fInvDash.cmdxptoxl.Create(Button)
+Gui.fInvDash.cmdxptoxl.Size(1605,465)
+Gui.fInvDash.cmdxptoxl.Position(3765,13440)
+Gui.fInvDash.cmdxptoxl.Caption("Export")
+Gui.fInvDash.cmdxptoxl.Event(Click,cmdExportToXL_Click)
+Gui.fInvDash.cmdRefresh.Create(Button)
+Gui.fInvDash.cmdRefresh.Size(1875,465)
+Gui.fInvDash.cmdRefresh.Position(5580,13440)
+Gui.fInvDash.cmdRefresh.Caption("Refresh Dashboard")
+Gui.fInvDash.cmdRefresh.Event(Click,Reload_Dash)
+Gui.fNewPrt..Create
+Gui.fNewPrt..Caption("Create New Part")
+Gui.fNewPrt..Size(12705,3300)
+Gui.fNewPrt..MinX(0)
+Gui.fNewPrt..MinY(0)
+Gui.fNewPrt..Position(0,0)
+Gui.fNewPrt..BackColor(-2147483633)
+Gui.fNewPrt..MousePointer(0)
+Gui.fNewPrt..Event(UnLoad,fNewPrt_UnLoad)
+Gui.fNewPrt..Sizeable(False)
+Gui.fNewPrt..MaxButton(False)
+Gui.fNewPrt.txtPart.Create(TextBox,"",True,1545,300,0,150,390,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtPart.TabStop(True)
+Gui.fNewPrt.txtPart.TabIndex(1)
+Gui.fNewPrt.txtPart.ControlGroup(1)
+Gui.fNewPrt.txtPart.Event(LostFocus,lostfocus)
+Gui.fNewPrt.lbl1.Create(Label,"Part",True,1650,255,0,90,120,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.lbl2.Create(Label,"Rev",True,465,255,0,1800,135,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.txtRev.Create(TextBox,"",True,465,300,0,1800,390,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtRev.TabStop(True)
+Gui.fNewPrt.txtRev.TabIndex(2)
+Gui.fNewPrt.txtRev.ControlGroup(1)
+Gui.fNewPrt.txtRev.Event(LostFocus,lostfocus)
+Gui.fNewPrt.lbl3.Create(Label,"Loc",True,420,255,0,2370,120,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.txtLoc.Create(TextBox,"",True,315,300,0,2370,390,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtLoc.TabStop(True)
+Gui.fNewPrt.txtLoc.TabIndex(3)
+Gui.fNewPrt.txtLoc.ControlGroup(1)
+Gui.fNewPrt.txtLoc.Event(LostFocus,lostfocus)
+Gui.fNewPrt.lbl4.Create(Label,"Prod Line",True,915,255,0,3420,120,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.lbl5.Create(Label,"UM",True,420,270,0,4320,120,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.lbl6.Create(Label,"Source",True,915,270,0,5085,120,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.txtDesc.Create(TextBox,"",True,3435,300,0,6675,390,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtDesc.TabStop(True)
+Gui.fNewPrt.txtDesc.TabIndex(7)
+Gui.fNewPrt.txtDesc.ControlGroup(1)
+Gui.fNewPrt.lbl7.Create(Label,"Description",True,1650,255,0,6660,120,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.ddlSource.Create(DropDownList)
+Gui.fNewPrt.ddlSource.Size(1485,330)
+Gui.fNewPrt.ddlSource.Position(5085,375)
+Gui.fNewPrt.ddlSource.TabStop(True)
+Gui.fNewPrt.ddlSource.TabIndex(6)
+Gui.fNewPrt.ddlSource.ControlGroup(1)
+Gui.fNewPrt.cmdCrPart.Create(Button)
+Gui.fNewPrt.cmdCrPart.Size(3345,540)
+Gui.fNewPrt.cmdCrPart.Position(105,2295)
+Gui.fNewPrt.cmdCrPart.Caption("Create Part")
+Gui.fNewPrt.cmdCrPart.Event(Click,cmdCrPart_Click)
+Gui.fNewPrt.cmdCrPart.TabStop(True)
+Gui.fNewPrt.cmdCrPart.TabIndex(21)
+Gui.fNewPrt.lblLstPrc.Create(Label,"List Price",True,885,210,0,120,825,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.txtLstPrc.Create(TextBox,"",True,1575,300,0,120,1080,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtLstPrc.Event(LostFocus,lostfocus)
+Gui.fNewPrt.txtLstPrc.TabStop(True)
+Gui.fNewPrt.txtLstPrc.TabIndex(8)
+Gui.fNewPrt.txtLstPrc.ControlGroup(1)
+Gui.fNewPrt.txtextDesc.Create(TextboxM)
+Gui.fNewPrt.txtextDesc.Size(5745,1335)
+Gui.fNewPrt.txtextDesc.Position(6705,1080)
+Gui.fNewPrt.txtextDesc.TabStop(True)
+Gui.fNewPrt.txtextDesc.TabIndex(12)
+Gui.fNewPrt.txtextDesc.ControlGroup(1)
+Gui.fNewPrt.lbl8.Create(Label,"Ext description",True,1650,255,0,6690,810,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.ddlProdLn.Create(DropDownList)
+Gui.fNewPrt.ddlProdLn.Size(660,330)
+Gui.fNewPrt.ddlProdLn.Position(3420,375)
+Gui.fNewPrt.ddlProdLn.TabStop(True)
+Gui.fNewPrt.ddlProdLn.TabIndex(4)
+Gui.fNewPrt.ddlProdLn.ControlGroup(1)
+Gui.fNewPrt.ddlUM.Create(DropDownList)
+Gui.fNewPrt.ddlUM.Size(630,330)
+Gui.fNewPrt.ddlUM.Position(4350,375)
+Gui.fNewPrt.ddlUM.TabStop(True)
+Gui.fNewPrt.ddlUM.TabIndex(5)
+Gui.fNewPrt.ddlUM.ControlGroup(1)
+Gui.fNewPrt.txtAltCost.Create(TextBox,"",True,1515,300,0,1800,1080,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtAltCost.Event(LostFocus,lostfocus)
+Gui.fNewPrt.txtAltCost.TabStop(True)
+Gui.fNewPrt.txtAltCost.TabIndex(9)
+Gui.fNewPrt.txtAltCost.ControlGroup(1)
+Gui.fNewPrt.lblalt.Create(Label,"Alt Cost",True,885,210,0,1800,825,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.lblsft.Create(Label,"Safety Stock",True,1125,210,0,3420,840,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.txtSftStk.Create(TextBox,"",True,1560,300,0,3420,1080,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtSftStk.Event(LostFocus,lostfocus)
+Gui.fNewPrt.txtSftStk.TabStop(True)
+Gui.fNewPrt.txtSftStk.TabIndex(10)
+Gui.fNewPrt.txtSftStk.ControlGroup(1)
+Gui.fNewPrt.txtAltCost2.Create(Label,"Order Quantity",True,1230,210,0,5085,840,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.txtOrdQty.Create(TextBox,"",True,1515,300,0,5085,1080,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtOrdQty.Event(LostFocus,lostfocus)
+Gui.fNewPrt.txtOrdQty.TabStop(True)
+Gui.fNewPrt.txtOrdQty.TabIndex(11)
+Gui.fNewPrt.txtOrdQty.ControlGroup(1)
+Gui.fNewPrt.ddlpurchUM.Create(DropDownList)
+Gui.fNewPrt.ddlpurchUM.Size(660,330)
+Gui.fNewPrt.ddlpurchUM.Position(120,1800)
+Gui.fNewPrt.ddlpurchUM.TabStop(True)
+Gui.fNewPrt.ddlpurchUM.TabIndex(13)
+Gui.fNewPrt.ddlpurchUM.ControlGroup(1)
+Gui.fNewPrt.lbl9.Create(Label,"Purch UM",True,795,255,0,120,1545,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.txtLT.Create(TextBox,"",True,750,300,0,915,1815,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtLT.TabStop(True)
+Gui.fNewPrt.txtLT.TabIndex(14)
+Gui.fNewPrt.txtLT.ControlGroup(1)
+Gui.fNewPrt.lbl10.Create(Label,"Lead Time",True,915,255,0,915,1545,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.lbl11.Create(Label,"Vendor Sort",True,1215,270,0,1800,1545,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.ddlUsrDef.Create(DropDownList)
+Gui.fNewPrt.ddlUsrDef.Size(2325,330)
+Gui.fNewPrt.ddlUsrDef.Position(4275,1800)
+Gui.fNewPrt.ddlUsrDef.TabStop(True)
+Gui.fNewPrt.ddlUsrDef.TabIndex(16)
+Gui.fNewPrt.ddlUsrDef.ControlGroup(1)
+Gui.fNewPrt.lbl12.Create(Label,"Part Type",True,1215,270,0,4275,1545,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.txtAltCost3.Create(Label,"Reorder Point",True,1230,210,0,3615,2265,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.txtReOrd.Create(TextBox,"",True,1815,300,0,3615,2520,True,0,"Arial",8,-2147483643,1)
+Gui.fNewPrt.txtReOrd.Event(LostFocus,lostfocus)
+Gui.fNewPrt.txtReOrd.TabStop(True)
+Gui.fNewPrt.txtReOrd.TabIndex(17)
+Gui.fNewPrt.txtReOrd.ControlGroup(1)
+Gui.fNewPrt.ddlInAct.Create(DropDownList)
+Gui.fNewPrt.ddlInAct.Size(990,330)
+Gui.fNewPrt.ddlInAct.Position(5610,2505)
+Gui.fNewPrt.ddlInAct.TabStop(True)
+Gui.fNewPrt.ddlInAct.TabIndex(18)
+Gui.fNewPrt.ddlInAct.ControlGroup(1)
+Gui.fNewPrt.txtAltCost4.Create(Label,"Inactive Part",True,1020,210,0,5610,2280,True,0,"Arial",8,-2147483633,0)
+Gui.fNewPrt.cboVendsrt.Create(ComboBox)
+Gui.fNewPrt.cboVendsrt.Size(2340,330)
+Gui.fNewPrt.cboVendsrt.Position(1800,1800)
+Gui.fNewPrt.cboVendsrt.TabStop(True)
+Gui.fNewPrt.cboVendsrt.TabIndex(15)
+Gui.fNewPrt.cboVendsrt.ControlGroup(1)
+Gui.fNewPrt.chkLotBin.Create(CheckBox)
+Gui.fNewPrt.chkLotBin.Size(1305,360)
+Gui.fNewPrt.chkLotBin.Position(6765,2520)
+Gui.fNewPrt.chkLotBin.Caption("Lot / Bin")
+Gui.fNewPrt.chkLotBin.TabStop(True)
+Gui.fNewPrt.chkLotBin.TabIndex(19)
+Gui.fNewPrt.chkReqInsp.Create(CheckBox)
+Gui.fNewPrt.chkReqInsp.Size(1965,360)
+Gui.fNewPrt.chkReqInsp.Position(8160,2520)
+Gui.fNewPrt.chkReqInsp.Caption("Requires Inspection")
+Gui.fNewPrt.chkReqInsp.TabStop(True)
+Gui.fNewPrt.chkReqInsp.TabIndex(20)
+Gui.fNewPrt.cboCodeSort.Create(ComboBox)
+Gui.fNewPrt.cboCodeSort.Size(2220,330)
+Gui.fNewPrt.cboCodeSort.Position(10215,375)
+Gui.fNewPrt.cboCodeSort.Event(LostFocus,cboCodeSort_LostFocus)
+Gui.fNewPrt.lblCodeSort.Create(Label,"Sort Code",True,1935,255,0,10215,120,True,0,"Arial",8,-2147483633,0)
+Gui.fExtDesc..Create
+Gui.fExtDesc..Caption("Extended description for part ")
+Gui.fExtDesc..Size(7200,4665)
+Gui.fExtDesc..MinX(0)
+Gui.fExtDesc..MinY(0)
+Gui.fExtDesc..Position(0,0)
+Gui.fExtDesc..BackColor(-2147483633)
+Gui.fExtDesc..MousePointer(0)
+Gui.fExtDesc..Event(UnLoad,fExtDesc_UnLoad)
+Gui.fExtDesc..Sizeable(False)
+Gui.fExtDesc..MaxButton(False)
+Gui.fExtDesc.cmdSaveExtDesc.Create(Button)
+Gui.fExtDesc.cmdSaveExtDesc.Size(1140,375)
+Gui.fExtDesc.cmdSaveExtDesc.Position(-15,3840)
+Gui.fExtDesc.cmdSaveExtDesc.Caption("Save")
+Gui.fExtDesc.cmdSaveExtDesc.Event(Click,cmdSaveExtDesc_Click)
+Gui.fExtDesc.txtExtDesc.Create(TextboxM)
+Gui.fExtDesc.txtExtDesc.Size(7050,3750)
+Gui.fExtDesc.txtExtDesc.Position(-30,-15)
+Gui.fExtDesc.txtExtDesc.Event(Change,txtExtDesc_Change)
+Gui.fXlExport..Create
+Gui.fXlExport..Caption("Export to Excel")
+Gui.fXlExport..Size(5445,2250)
+Gui.fXlExport..MinX(0)
+Gui.fXlExport..MinY(0)
+Gui.fXlExport..Position(0,0)
+Gui.fXlExport..BackColor(-2147483633)
+Gui.fXlExport..MaxButton(False)
+Gui.fXlExport..MousePointer(0)
+Gui.fXlExport..Sizeable(False)
+Gui.fXlExport..Event(UnLoad,fXlExport_UnLoad)
+Gui.fXlExport.txtXPFold.Create(TextBox,"",True,4575,300,0,75,330,True,0,"Arial",8,-2147483643,1)
+Gui.fXlExport.txtXPFold.Locked(True)
+Gui.fXlExport.cmdSelectFold.Create(Button)
+Gui.fXlExport.cmdSelectFold.Size(405,345)
+Gui.fXlExport.cmdSelectFold.Position(4815,300)
+Gui.fXlExport.cmdSelectFold.Caption("^")
+Gui.fXlExport.cmdSelectFold.Event(Click,cmdSelectFold_Click)
+Gui.fXlExport.lbl1.Create(Label,"Select Export folder",True,1935,255,0,75,105,True,0,"Arial",8,-2147483633,0)
+Gui.fXlExport.txtXPName.Create(TextBox,"INV_DASH_EXPORT",True,2190,300,0,75,975,True,0,"Arial",8,-2147483643,1)
+Gui.fXlExport.txtXPName.DefaultValue("INV_DASH_EXPORT")
+Gui.fXlExport.lbl2.Create(Label,"File Name",True,1935,255,0,75,750,True,0,"Arial",8,-2147483633,0)
+Gui.fXlExport.cmdExportToXL.Create(Button)
+Gui.fXlExport.cmdExportToXL.Size(1350,375)
+Gui.fXlExport.cmdExportToXL.Position(75,1380)
+Gui.fXlExport.cmdExportToXL.Caption("Export")
+Gui.fXlExport.cmdExportToXL.Event(Click,cmdExportToXL_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.bSaved.declare(boolean)
+v.Global.iMaxCount.Declare(long)
+v.Global.sIcon.Declare(String)
+V.Global.bCopy.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+v.Local.bCheck.Declare(boolean)
+v.Local.sSQL.Declare(String)
+v.Local.sPL.Declare(String)
+v.Local.sUM.Declare(String)
+v.Local.sPUM.Declare(String)
+v.Local.sVend.Declare(String)
+v.Local.sPartType.Declare(String)
+v.Local.sFlag.Declare(String)
+v.Global.bSaved.Set(false)
+v.Local.iMaxCount.Declare(long)
+v.Local.iCount.Declare(long)
+v.Local.iCount2.Declare(long)
+v.Local.sHeader.Declare(string)
+v.Local.sHeader1.Declare(string)
+v.Local.sDictRet.Declare(string)
+v.Local.sFilter.Declare(string)
+v.Local.sCaption.Declare(string)
+V.Local.sLinks.Declare
+V.Local.sTitle.Declare
+V.Local.sSortCodes.Declare
+V.Local.bPerms.Declare
+f.Intrinsic.Control.try
+
+'401012-3
+F.Global.General.ReadOption("401012",1,"***NORETURN***",3,V.Local.sTitle)
+
+'f.Data.DataTable.Create("Empty",true)
+'gui.fInvDash.GsGCInvDash.AddGridviewFromDatatable("Empty","Empty")
+'gui.fInvDash.GsGCInvDash.MainView("Empty")
+'f.Data.DataTable.Close("Empty")
+
+Function.Intrinsic.UI.InvokeWaitDialog("Compiling data","Inventory Dashboard")
+
+'f.Global.Security.IsInGroup(v.Caller.User,"",v.caller.CompanyCode,v.Local.bCheck)
+'f.intrinsic.Control.If(v.Local.bCheck,<>,true)
+'	f.Intrinsic.Control.CallSub(fInvDash_UnLoad)
+'f.Intrinsic.Control.EndIf
+
+'set icon
+F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.global.sIcon)
+gui.fInvDash..Icon(v.Global.sIcon)
+gui.fNewPrt..Icon(v.Global.sIcon)
+gui.fXlExport..Icon(v.Global.sIcon)
+gui.fExtDesc..Icon(v.Global.sIcon)
+f.ODBC.Connection!conx.openconnection(v.Ambient.PDSN,v.Ambient.PUser,v.Ambient.pPass)
+'Build master data table
+v.Local.sSQL.Set("select PART + LOCATION AS PART_REV_LOC,PART as PART_REV, substring(part,1,17) as PART, substring(part,18,3) as REV, LOCATION,DESCRIPTION, RTRIM(' ') as EXT_DESC,UM_INVENTORY,PRODUCT_LINE,RTRIM(' ') as SOURCE,RTRIM(' ') as SOURCEN, AMT_PRICE,AMT_COST,AMT_ALT_COST, UM_PURCHASING, TIME_MATERIAL_LEAD, QTY_SAFETY,QTY_ORDER, RTRIM(' ') AS VEND_SORT,RTRIM(' ') AS Part_type  ,QTY_ONHAND, RTRIM(' ') AS IN_TRANSIT ,QTY_ONORDER_PO, QTY_ONORDER_WO,RTRIM(' ') AS QTY_ONORDER, RTRIM(' ') as QTY_ALLOCATED, RTRIM(' ') as QTY_IN_QUAL, QTY_REQUIRED,RTRIM(' ')  AS NET, QTY_REORDER, if(FLAG_INACTIVE = 'Y', 'Y', 'N') as FLAG_INACTIVE, if(FLAG_LOT = 'Y', 'Y', 'N') as FLAG_LOT, rtrim(' ') AS REQUIRES_INSP, rtrim(CODE_SORT) as CODE_SORT from v_INVENTORY_MSTR")
+f.Data.DataTable.CreateFromSql("InvDash","conx",v.Local.sSQL,true)
+
+f.Data.Dictionary.Exists("venddict",v.Local.bCheck)
+'create vendor dictionary and add to  auto complete icon
+f.Intrinsic.Control.If(v.Local.bCheck,=,false)
+	f.Data.Dictionary.CreateFromSQL("venddict","conx","select RTRIM(VENDOR) as VENDOR, RTRIM(NAME_VENDOR) as NAME_VENDOR from v_VENDOR_MASTER where vendor <> ''")
+	f.data.Dictionary.SetDefaultReturn("venddict","")
+	gui.fNewPrt.cboVendsrt.ClearItems
+	gui.fNewPrt.cboVendsrt.AddAutoCompleteItem("venddict","dictionary")
+	gui.fNewPrt.cboVendsrt.AddItems("dictionary","venddict")
+f.Intrinsic.Control.EndIf
+
+'Calculate QTY allocated
+F.Data.Dictionary.CreateFromSQL("dictQTYAllocations","conx","select PART + LOCATION, rtrim(cast(SUM(QUANTITY) as char(500))) from V_ITEM_MASTER where QUANTITY > 0 and ALLOCATED = 'Y' group by PART, LOCATION")
+F.Data.Dictionary.SetDefaultReturn("dictQTYAllocations","0.000000")
+F.Data.DataTable.FillFromDictionary("InvDash","dictQTYAllocations","PART_REV_LOC","QTY_ALLOCATED")
+F.Data.Dictionary.Close("dictQTYAllocations")
+
+'Calculate QTY in quality
+F.Data.Dictionary.CreateFromSQL("dictQTYQuality","conx","select PART + LOCATION, rtrim(cast(SUM(QTY_REMAINING) as char(500))) from V_QUALITY where QTY_REMAINING > 0 group by PART, LOCATION")
+F.Data.Dictionary.SetDefaultReturn("dictQTYQuality","0.0000")
+F.Data.DataTable.FillFromDictionary("InvDash","dictQTYQuality","PART_REV_LOC","QTY_IN_QUAL")
+F.Data.Dictionary.Close("dictQTYQuality")
+
+'build DT for cross references by looping through and creating column groups based on max number of cross references 
+f.odbc.Connection!conx.executeandreturn("select max(a.cnt_part) as max_cnt_part from (select Part + location as part_rev_loc, count(Part) as cnt_part from V_INV_CROSS_REF where vendor <> '' and MFG_PART <> '' group by part_rev_loc) as a",v.Global.iMaxCount)
+f.Data.DataTable.CreateFromSQL("crossref","conx","select Part + location as part_rev_loc,RTRIM(vendor) as vendor,RTRIM(MFG_PART) as MFG_PART, RTRIM(MFG_NAME) as MFG_NAME,RTRIM(USER_DEFINED_PART) as USER_DEFINED_PART from V_INV_CROSS_REF  where vendor <> '' and MFG_PART <> '' order by part_rev_loc,vendor DESC")
+
+f.Intrinsic.Control.For(v.Local.iCount,1,v.Global.iMaxCount,1)
+	
+	f.Data.Dictionary.createfromdatatable("vendor","crossref","PART_REV_LOC","vendor")
+	f.Data.Dictionary.SetDefaultReturn("vendor","")
+	f.intrinsic.String.Build("Vendor_{0}",v.Local.iCount,v.Local.sHeader)
+	f.Data.DataTable.AddColumn("InvDash",v.Local.sHeader,"string")
+	f.Data.DataTable.FillFromDictionary("InvDash","vendor","PART_REV_LOC",v.Local.sHeader)
+	
+	f.intrinsic.String.Build("Vendorn_{0}",v.Local.iCount,v.Local.sHeader1)
+	f.Data.DataTable.AddColumn("InvDash",v.Local.sHeader1,"string")
+	f.Data.DataTable.FillFromDictionary("InvDash","venddict",v.Local.sHeader,v.Local.sHeader1)
+
+	
+
+	
+	
+	f.Data.Dictionary.createfromdatatable("USER_DEFINED_PART","crossref","PART_REV_LOC","USER_DEFINED_PART")
+	f.Data.Dictionary.SetDefaultReturn("USER_DEFINED_PART","")
+	f.intrinsic.String.Build("USER_DEFINED_PART_{0}",v.Local.iCount,v.Local.sHeader)
+	f.Data.DataTable.AddColumn("InvDash",v.Local.sHeader,"string")
+	f.Data.DataTable.FillFromDictionary("InvDash","USER_DEFINED_PART","PART_REV_LOC",v.Local.sHeader)
+	
+	f.Data.Dictionary.createfromdatatable("MFG_NAME","crossref","PART_REV_LOC","MFG_NAME")
+	f.Data.Dictionary.SetDefaultReturn("MFG_NAME","")
+	f.intrinsic.String.Build("MFG_NAME_{0}",v.Local.iCount,v.Local.sHeader)
+	f.Data.DataTable.AddColumn("InvDash",v.Local.sHeader,"string")
+	f.Data.DataTable.FillFromDictionary("InvDash","MFG_NAME","PART_REV_LOC",v.Local.sHeader)
+		
+	f.Data.Dictionary.createfromdatatable("MFG_PART","crossref","PART_REV_LOC","MFG_PART")
+	f.Data.Dictionary.SetDefaultReturn("MFG_PART","")
+	f.intrinsic.String.Build("MFG_PART_{0}",v.Local.iCount,v.Local.sHeader)
+	f.Data.DataTable.AddColumn("InvDash",v.Local.sHeader,"string")
+	f.Data.DataTable.FillFromDictionary("InvDash","MFG_PART","PART_REV_LOC",v.Local.sHeader)
+	f.Data.Dictionary.Close("MFG_PART")
+		
+	f.Data.Dictionary.createfromdatatable("MFG_PART","crossref","PART_REV_LOC","MFG_PART")
+	f.Data.Dictionary.SetDefaultReturn("MFG_PART","")
+	f.intrinsic.String.Build("MFG_PARTA_{0}",v.Local.iCount,v.Local.sHeader)
+	f.Data.DataTable.AddColumn("InvDash",v.Local.sHeader,"string")
+	f.Data.DataTable.FillFromDictionary("InvDash","MFG_PART","PART_REV_LOC",v.Local.sHeader)
+	
+	
+'	f.Data.Dictionary.createfromdatatable("MFG_PART","crossref","PART_REV_LOC","MFG_PART")
+'	f.Data.Dictionary.SetDefaultReturn("MFG_PART","")
+'	f.intrinsic.String.Build("MFG_PART_{0}",v.Local.iCount,v.Local.sHeader)
+'	f.Data.DataTable.AddColumn("InvDash",v.Local.sHeader,"string")
+'	f.Data.DataTable.FillFromDictionary("InvDash","vendor","PART_REV_LOC",v.Local.sHeader)
+	
+	
+
+	
+	f.Data.Dictionary.returnallpairs("vendor",v.Local.sDictRet)
+	f.intrinsic.string.Split(v.Local.sDictRet,"!*!",v.Local.sDictRet)
+	v.Local.sDictRet.RedimPreserve(0,0)
+	f.Intrinsic.String.split(v.Local.sDictRet,"*!*",v.Local.sDictRet)
+	
+	'delete all rows which have part rev loc in dictionary(initial dictionary created will only give the first cross ref for the part)
+	f.Intrinsic.Control.For(v.local.iCount2,0,v.local.sDictRet.UBound,1)
+		
+		f.Intrinsic.String.Build("part_rev_loc = '{0}'",v.Local.sDictRet(v.Local.iCount2),v.Local.sFilter)
+		
+		f.Data.DataView.create("crossref","temp",22,v.Local.sFilter,"")
+		
+		f.Data.Datatable.DeleteRow("crossref",v.DataView.crossref!temp(0).datatableindex)
+		
+		f.Data.DataView.Close("crossref","temp")
+		
+	f.Intrinsic.Control.Next(v.Local.iCount2)
+
+
+	f.Data.Dictionary.Close("vendor")
+	f.Data.Dictionary.Close("MFG_PART")
+	f.Data.Dictionary.Close("MFG_NAME")
+	f.Data.Dictionary.Close("USER_DEFINED_PART")
+	f.Data.DataTable.acceptchanges("crossref")
+'	f.Data.Dictionary.Close("vendor")
+	
+
+f.Intrinsic.Control.Next(v.Local.iCount)
+
+f.data.DataTable.Close("crossref")
+
+f.Data.DataTable.AddColumn("InvDash","Doc_Con","long")
+f.Data.DataTable.AddColumn("InvDash","Copy","String")
+f.Data.DataTable.AddColumn("InvDash","edit","String")
+f.Data.DataTable.SetValue("InvDash",-1,"edit","N")
+
+
+'f.Data.Dictionary.CreateFromSQL("extdesc","conx","select PART,TEXT from INV_EXTRA_TEXT")
+'f.Data.Dictionary.SetDefaultReturn("extdesc","")
+'f.Data.DataTable.FillFromDictionary("InvDash","extdesc","PART_REV","EXT_DESC_ACT")
+'F.Data.Dictionary.Close("extdesc")
+'create dictionary for ext desc and fill master DT
+f.Data.Dictionary.CreateFromSQL("extdesc","conx","select PART,REPLACE(TEXT,CHAR(13) + CHAR(10), CHAR(32) + CHAR(29)) as TEXT from INV_EXTRA_TEXT")
+f.Data.Dictionary.SetDefaultReturn("extdesc","")
+f.Data.DataTable.FillFromDictionary("InvDash","extdesc","PART_REV","EXT_DESC")
+F.Data.Dictionary.Close("extdesc")
+'create dictionary for cdsrc and fill master DT
+f.Data.Dictionary.CreateFromSQL("cdsrc","conx","select part + location as part_rev_loc,RTRIM(code_source) as code_source from INVENTORY_MST2")
+f.Data.Dictionary.SetDefaultReturn("cdsrc","")
+f.Data.DataTable.FillFromDictionary("InvDash","cdsrc","PART_REV_LOC","SOURCE")
+F.Data.Dictionary.Close("cdsrc")
+'create dictionary for requires inspection flag and fill master DT
+F.Data.Dictionary.CreateFromSQL("reqinsp","conx","select part + location as part_rev_loc,RTRIM(requires_insp) as requires_insp from INVENTORY_MST2 where requires_insp = 'Y'")
+F.Data.Dictionary.SetDefaultReturn("reqinsp","N")
+F.Data.DataTable.FillFromDictionary("InvDash","reqinsp","PART_REV_LOC","REQUIRES_INSP")
+F.Data.Dictionary.Close("reqinsp")
+'create dictionary for intransit and fill master DT
+f.Data.Dictionary.CreateFromSQL("transit","conx","select part + location as part_rev_loc,sum(in_transit_qty) as in_transit_qty from V_ITEM_MASTER group by part_rev_loc")
+f.Data.Dictionary.SetDefaultReturn("transit",0)
+f.Data.DataTable.FillFromDictionary("InvDash","transit","PART_REV_LOC","IN_TRANSIT")
+
+'create expression column for net calc
+f.Data.DataTable.CreateFromSql("netcalc","conx","select PART + LOCATION AS PART_REV_LOC,QTY_ONORDER_PO, QTY_ONORDER_WO,QTY_ONHAND, QTY_REQUIRED, RTRIM(' ') AS IN_TRANSIT from v_INVENTORY_MSTR")
+f.Data.DataTable.FillFromDictionary("netcalc","transit","PART_REV_LOC","IN_TRANSIT")
+f.Data.DataTable.AddExpressionColumn("netcalc","NET_PART","float","QTY_ONORDER_PO+QTY_ONORDER_WO+QTY_ONHAND+IN_TRANSIT")
+f.Data.DataTable.AddExpressionColumn("netcalc","NET","float","NET_PART-QTY_REQUIRED")
+
+'create expression column for net calc
+f.Data.Dictionary.createfromdatatable("netcalcdict","netcalc","PART_REV_LOC","NET")
+f.Data.Dictionary.SetDefaultReturn("netcalcdict",0)
+f.Data.DataTable.FillFromDictionary("invdash","netcalcdict","PART_REV_LOC","NET")
+f.Data.Dictionary.Close("netcalcdict")
+f.Data.DataTable.Close("netcalc")
+f.Data.Dictionary.Close("transit")
+'create expression column for on order calc
+f.Data.DataTable.CreateFromSql("onordercalc","conx","select PART + LOCATION AS PART_REV_LOC,QTY_ONORDER_PO, QTY_ONORDER_WO from v_INVENTORY_MSTR")
+f.Data.DataTable.AddExpressionColumn("onordercalc","qtyonorder","float","QTY_ONORDER_PO+QTY_ONORDER_WO")
+f.Data.Dictionary.createfromdatatable("onordercalcdict","onordercalc","PART_REV_LOC","qtyonorder")
+f.Data.Dictionary.SetDefaultReturn("onordercalcdict",0)
+f.Data.DataTable.FillFromDictionary("invdash","onordercalcdict","PART_REV_LOC","QTY_ONORDER")
+f.data.Dictionary.Close("onordercalcdict")
+f.Data.DataTable.Close("onordercalc")
+'create and fill vend sort dictionary
+f.Data.Dictionary.CreateFromSQL("vendsrt","conx","select part + location as part_rev_loc, Name_vendor from v_inventory_mst2")
+f.data.Dictionary.SetDefaultReturn("vendsrt","")
+f.Data.DataTable.FillFromDictionary("invdash","vendsrt","PART_REV_LOC","vend_sort")
+f.data.Dictionary.Close("vendsrt")
+'create and fill part type custom field
+f.Data.Dictionary.CreateFromSQL("prttype","conx","select part + location as part_rev_loc, RTRIM(text_info1) as text_info1 from v_inventory_mst2")
+f.data.Dictionary.SetDefaultReturn("prttype","")
+f.Data.DataTable.FillFromDictionary("invdash","prttype","PART_REV_LOC","part_type")
+f.data.Dictionary.Close("prttype")
+
+
+
+
+'f.Data.Dictionary.CreateFromSQL("cntdoc","conx","select ID, COUNT(ID) as CNT_ID from LINK_DATA where LINK_ID = '30' group by ID")
+'f.Data.Dictionary.SetDefaultReturn("cntdoc",0)
+'f.Data.DataTable.FillFromDictionary("InvDash","cntdoc","PART_REV_LOC","doc_con")
+'F.Data.Dictionary.Close("cntdoc")
+'create dictionary for code source and populate ddl
+f.Data.Dictionary.Create("cde2src")
+f.Data.dictionary.AddItem("cde2src","M","Manufacture to Stock")
+f.Data.dictionary.AddItem("cde2src","F","Manufacture to Job")
+f.Data.dictionary.AddItem("cde2src","P","Purchase to Stock")
+f.Data.dictionary.AddItem("cde2src","J","Purchase to Job")
+f.Data.dictionary.AddItem("cde2src","C","Consign to Stock")
+f.Data.dictionary.AddItem("cde2src","G","Consign to Job")
+f.Data.DataTable.FillFromDictionary("InvDash","cde2src","SOURCE","SOURCEN")
+gui.fNewPrt.ddlSource.ClearItems
+gui.fNewPrt.ddlSource.additems("dictionary","cde2src")
+
+
+
+
+
+f.Data.Dataview.Create("InvDash","InvDashVw",22)
+
+gui.fInvDash.GsGCInvDash.AddGridviewFromDataview("InvDashGrid","InvDash","InvDashVw")
+'create prodline string to populate ddl item
+v.Local.sSQL.Set("select distinct PRODUCT_LINE from V_PRODUCT_LINE")
+f.data.DataTable.CreateFromSQL("PLDT","conx",v.Local.sSQL)
+f.Data.DataTable.AddRow("PLDT","PRODUCT_LINE","")
+gui.fNewPrt.ddlProdLn.additems("datatable","PLDT","PRODUCT_LINE","PRODUCT_LINE")
+f.Data.Dataview.Create("PLDT","PLDTVW",22)
+f.data.DataView.ToString("PLDT","PLDTVW","PRODUCT_LINE","@!@","*!*",v.Local.sPL)
+f.Data.DataView.Close("PLDT","PLDTVW")
+f.Data.DataTable.Close("PLDT")
+'create UM string to populate ddl item
+v.Local.sSQL.Set("select distinct CODE + ' ' as CODE from UM_CODES")
+f.data.DataTable.CreateFromSQL("UMDT","conx",v.Local.sSQL,true)
+f.Data.DataTable.AddRow("UMDT","CODE","   ")
+f.data.DataTable.CreateFromSQL("UMDT2","conx",v.Local.sSQL,true)
+f.Data.DataTable.AddRow("UMDT2","CODE","   ")
+gui.fNewPrt.ddlUM.additems("datatable","UMDT","CODE","CODE")
+gui.fNewPrt.ddlpurchUM.additems("datatable","UMDT2","CODE","CODE")
+f.Data.Dataview.Create("UMDT","UMDTVW",22)
+f.data.DataView.ToString("UMDT","UMDTVW","CODE","@!@","*!*",v.Local.sUM)
+v.Local.sPUM.Set(v.Local.sUM)
+f.Data.DataView.Close("UMDT","UMDTVW")
+f.Data.DataTable.Close("UMDT")
+f.Data.DataTable.Close("UMDT2")
+'create Code Sort string to populate ddl item
+V.Local.sSQL.Set("select distinct SORT_CODE from INV_SORT order by SORT_CODE")
+F.Data.DataTable.CreateFromSQL("SCDT","conx",V.Local.sSQL,true)
+F.Data.DataTable.AddRow("SCDT","SORT_CODE","          ")
+Gui.fNewPrt.cboCodeSort.AddItems("DataTable","SCDT","SORT_CODE","SORT_CODE")
+f.Data.Dataview.Create("SCDT","SCDTVW",22)
+f.data.DataView.ToString("SCDT","SCDTVW","SORT_CODE","@!@","*!*",v.Local.sSortCodes)
+f.Data.DataView.Close("SCDT","SCDTVW")
+f.Data.DataTable.Close("SCDT")
+'create vendor string to populate ddl item
+f.data.DataTable.CreateFromSQL("venddt","conx","select RTRIM(NAME_VENDOR) as NAME_VENDOR, RTRIM(VENDOR) as VENDOR from v_VENDOR_MASTER where vendor <> ''")
+f.Data.Dataview.Create("venddt","venddtvw",22)
+f.data.DataView.ToString("venddt","venddtvw","NAME_VENDOR","@!@","*!*",v.Local.svend)
+f.Data.DataView.Close("venddt","venddtvw")
+f.Data.DataTable.Close("venddt")
+
+
+'create part type string to populate ddl item
+f.data.DataTable.CreateFromSQL("prttypedt","conx","select distinct RTRIM(KEY_CODE) as KEY_CODE from INV_INFO1")
+f.Data.DataTable.AddRow("prttypedt","KEY_CODE","")
+
+gui.fNewPrt.ddlUsrDef.additems("datatable","prttypedt","KEY_CODE","KEY_CODE")
+
+f.Data.Dataview.Create("prttypedt","prttypedtvw",22)
+
+f.data.DataView.ToString("prttypedt","prttypedtvw","KEY_CODE","@!@","*!*",v.Local.sPartType)
+f.Data.DataView.Close("prttypedt","prttypedtvw")
+f.Data.DataTable.Close("prttypedt")
+
+'populate flag inact ddl
+gui.fNewPrt.ddlInAct.ClearItems
+gui.fNewPrt.ddlInAct.additem("N",0)
+gui.fNewPrt.ddlInAct.additem("Y",1)
+gui.fNewPrt.ddlInAct.additem("",2)
+v.Local.sFlag.Set("N*!*Y")
+Function.Intrinsic.UI.CloseWaitDialog
+Function.Intrinsic.UI.InvokeWaitDialog("Formating Dashboard","Inventory Dashboard")
+'create ddl and auto complete list in grid
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","Copy","EditorButton","Copy")
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","PRODUCT_LINE","Dropdownlist",v.Local.sPL)
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","UM_INVENTORY","Dropdownlist",v.Local.sUM)
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","UM_PURCHASING","Dropdownlist",v.Local.sPUM)
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","FLAG_INACTIVE","Dropdownlist",v.Local.sFlag)
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","FLAG_LOT","Dropdownlist",v.Local.sFlag)
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","REQUIRES_INSP","Dropdownlist",v.Local.sFlag)
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","VEND_SORT","Combobox",v.Local.svend)
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","Part_type","Dropdownlist",v.Local.sPartType)
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","CODE_SORT","ComboBox",v.Local.sSortCodes)
+
+gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid","SOURCEN","Dropdownlist","Manufacture to Stock*!*Manufacture to Job*!*Purchase to Stock*!*Purchase to Job*!*Consign to Stock*!*Consign to Job")
+
+F.ODBC.Connection!conx.ExecuteAndReturn("select distinct ID from LINK_DATA where TYPE = '00030';",V.Local.sLinks)
+F.Intrinsic.String.Split(V.Local.sLinks,"#$#",V.Local.sLinks)
+
+'Get integer placement of Doc_Con column
+V.Local.sColumns.Declare
+F.Intrinsic.String.Split(V.DataTable.InvDash.FieldNames,"Doc_Con",V.Local.sColumns)
+V.Local.sColumns.RedimPreserve(0,0)
+F.Intrinsic.String.Split(V.Local.sColumns,"*!*",V.Local.sColumns)
+
+F.Intrinsic.Control.For(V.Local.iCount,0,V.DataTable.InvDash.RowCount--,1)
+	V.Local.iCount2.Set(V.Local.sLinks.UBound)
+	F.Intrinsic.Variable.RemoveArrayElementByValue(V.Local.sLinks,V.DataTable.InvDash(V.Local.iCount).PART_REV_LOC!FieldValTrim,V.Local.sLinks)
+	F.Intrinsic.Control.If(V.Local.iCount2,>,V.Local.sLinks.UBound)
+		Gui.fInvDash.GsGCInvDash.SetCellAppearance("InvDashGrid",V.Local.sColumns.UBound,V.Local.iCount,"Icon","DCS-ON")
+	F.Intrinsic.Control.Else
+		Gui.fInvDash.GsGCInvDash.SetCellAppearance("InvDashGrid",V.Local.sColumns.UBound,V.Local.iCount,"Icon","DCS-OFF")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART_REV_LOC","visible","false")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART_REV","visible","false")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","edit","visible","false")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","source","visible","false")
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART","caption","Part")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART","CellForeColor", "Blue")
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART","Fixed", "left")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PART","MinWidth", 120)
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REV","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REV","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REV","caption","Rev")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REV","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REV","allowedit", false)
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REV","Fixed", "left")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REV","MinWidth", 30)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REV","MaxWidth", 35)
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","LOCATION","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","LOCATION","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","LOCATION","caption","Loc")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","LOCATION","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","LOCATION","allowedit", false)
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","LOCATION","Fixed", "left")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","LOCATION","MinWidth", 30)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","LOCATION","MaxWidth", 35)
+
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","DESCRIPTION","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","DESCRIPTION","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","DESCRIPTION","caption","Description")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","DESCRIPTION","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","DESCRIPTION","allowedit", true)
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","DESCRIPTION","Fixed", "left")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","DESCRIPTION","MinWidth", 200)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","DESCRIPTION","MaxWidth", 220)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","DESCRIPTION","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","CellWordWrap", "nowrap")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","Fixed", "left")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","caption","Ext Description")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","MinWidth", 200)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","MaxWidth", 1000)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","CellForeColor", "Blue")
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","EXT_DESC","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_INVENTORY","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_INVENTORY","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_INVENTORY","caption","UM")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_INVENTORY","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_INVENTORY","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_INVENTORY","MinWidth", 40)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_INVENTORY","MaxWidth", 45)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_INVENTORY","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_SORT","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_SORT","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_SORT","caption","Vendor Sort")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_SORT","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_SORT","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_SORT","MinWidth", 180)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_SORT","MaxWidth", 200)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_SORT","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Part_type","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Part_type","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Part_type","caption","Part Type")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Part_type","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Part_type","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Part_type","MinWidth", 65)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Part_type","MaxWidth", 70)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Part_type","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PRODUCT_LINE","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PRODUCT_LINE","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PRODUCT_LINE","caption","Prod Line")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PRODUCT_LINE","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PRODUCT_LINE","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PRODUCT_LINE","MinWidth", 65)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PRODUCT_LINE","MaxWidth", 70)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","PRODUCT_LINE","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","SOURCEN","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","SOURCEN","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","SOURCEN","caption","Source")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","SOURCEN","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","SOURCEN","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","SOURCEN","MinWidth", 120)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","SOURCEN","MaxWidth", 130)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","SOURCEN","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","caption","List Price")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","EditMaskType", "Numeric")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","EditMask", "########0.0000")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","EditMaskAsDisplayFormat", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","MinWidth", 75)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","MaxWidth", 80)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_PRICE","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_COST","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_COST","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_COST","caption","Cost")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_COST","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_COST","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_COST","MinWidth", 75)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_COST","MaxWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","caption","Alt Cost")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","EditMaskType", "Numeric")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","EditMask", "########0.0000")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","EditMaskAsDisplayFormat", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","MinWidth", 75)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","MaxWidth", 80)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","AMT_ALT_COST","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_PURCHASING","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_PURCHASING","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_PURCHASING","caption","Purch UM")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_PURCHASING","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_PURCHASING","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_PURCHASING","MinWidth", 60)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_PURCHASING","MaxWidth", 65)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","UM_PURCHASING","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","TIME_MATERIAL_LEAD","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","TIME_MATERIAL_LEAD","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","TIME_MATERIAL_LEAD","caption","Lead Time")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","TIME_MATERIAL_LEAD","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","TIME_MATERIAL_LEAD","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","TIME_MATERIAL_LEAD","MinWidth", 65)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","TIME_MATERIAL_LEAD","MaxWidth", 70)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","TIME_MATERIAL_LEAD","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","EditMaskType", "Numeric")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","EditMaskAsDisplayFormat", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","caption","Safety Stock")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","EditMaskType", "Numeric")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","EditMask", "########0.0000")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","EditMaskAsDisplayFormat", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","MaxWidth", 85)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_SAFETY","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONHAND","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONHAND","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONHAND","caption","Qty On Hand")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONHAND","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONHAND","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONHAND","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONHAND","MaxWidth", 85)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONHAND","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","caption","Order Qty")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","EditMaskType", "Numeric")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","EditMask", "########0.0000")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","EditMaskAsDisplayFormat", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","MaxWidth", 85)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ORDER","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_PO","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_PO","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_PO","caption","On Order PO")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_PO","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_PO","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_PO","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_PO","MaxWidth", 85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_WO","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_WO","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_WO","caption","On Order WO")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_WO","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_WO","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_WO","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER_WO","MaxWidth", 85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ALLOCATED","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ALLOCATED","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ALLOCATED","caption","Qty Alloc.")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ALLOCATED","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ALLOCATED","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ALLOCATED","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ALLOCATED","MaxWidth", 85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_IN_QUAL","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_IN_QUAL","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_IN_QUAL","caption","Qty in Qual.")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_IN_QUAL","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_IN_QUAL","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_IN_QUAL","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_IN_QUAL","MaxWidth", 85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REQUIRED","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REQUIRED","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REQUIRED","caption","Requirements")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REQUIRED","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REQUIRED","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REQUIRED","CellForeColor", "Blue")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REQUIRED","Width", 100)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REQUIRED","MinWidth", 90)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REQUIRED","MaxWidth", 95)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","caption","In Transit")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","EditMaskType", "Numeric")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","EditMask", "########0.0000")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","EditMaskAsDisplayFormat", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","CellHAlignment","Far")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","IN_TRANSIT","MaxWidth", 85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REORDER","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REORDER","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REORDER","caption","Reorder point")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REORDER","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REORDER","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REORDER","MinWidth", 90)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REORDER","MaxWidth", 95)
+
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_REORDER","cellbackcolor", "WhiteSmoke")
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","MANU_PART","headerforecolor", v.Color.PRI-GSS-00)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","MANU_PART","headerfontbold", true)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","MANU_PART","caption","Manufactured Part")
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","MANU_NAME","headerforecolor", v.Color.PRI-GSS-00)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","MANU_NAME","headerfontbold", true)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","MANU_NAME","caption","Manufacturer name")
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_NAME","headerforecolor", v.Color.PRI-GSS-00)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_NAME","headerfontbold", true)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_NAME","caption","Vendor Name")
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_PART","headerforecolor", v.Color.PRI-GSS-00)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_PART","headerfontbold", true)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","VEND_PART","caption","Vendor Part")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","caption","Qty on Order")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","EditMaskType", "Numeric")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","EditMask", "########0.0000")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","EditMaskAsDisplayFormat", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","MaxWidth", 85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","CellHAlignment","Far")
+
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","QTY_ONORDER","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_INACTIVE","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_INACTIVE","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_INACTIVE","caption","Flag inactive")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_INACTIVE","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_INACTIVE","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_INACTIVE","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_INACTIVE","MaxWidth",85)
+'gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_INACTIVE","cellbackcolor", "WhiteSmoke")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_LOT","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_LOT","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_LOT","caption","Flag Lot/Bin")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_LOT","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_LOT","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_LOT","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","FLAG_LOT","MaxWidth",85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REQUIRES_INSP","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REQUIRES_INSP","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REQUIRES_INSP","caption","Req. Insp.")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REQUIRES_INSP","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REQUIRES_INSP","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REQUIRES_INSP","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","REQUIRES_INSP","MaxWidth",85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","CODE_SORT","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","CODE_SORT","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","CODE_SORT","caption","Sort Code")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","CODE_SORT","readonly", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","CODE_SORT","allowedit", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","CODE_SORT","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","CODE_SORT","MaxWidth",85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","CODE_SORT","MaxLength",10)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","headerforecolor", v.Color.PRI-GSS-00)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","headerfontbold", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","caption","NET")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","EditMaskType", "Numeric")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","EditMask", "########0.0000")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","EditMaskAsDisplayFormat", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","MinWidth", 80)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","MaxWidth", 85)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","NET","CellHAlignment","Far")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Doc_Con","caption"," ")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Doc_Con","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Doc_Con","allowedit", False)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Doc_Con","Fixed", "Right")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Doc_Con","MinWidth", 35)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Doc_Con","MaxWidth", 40)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Copy","caption"," ")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Copy","readonly", true)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Copy","allowedit", false)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Copy","Fixed", "Right")
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Copy","MinWidth", 45)
+gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Copy","MaxWidth", 50)
+
+
+'dynamically format the crossref columns
+
+f.Intrinsic.Control.For(v.Local.iCount,1,v.Global.iMaxCount,1)
+	
+	f.intrinsic.String.Build("Vendor_{0}",v.Local.iCount,v.Local.sHeader)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"visible","false")
+	
+	f.intrinsic.String.Build("MFG_PARTA_{0}",v.Local.iCount,v.Local.sHeader)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"visible","false")
+	
+	f.intrinsic.String.Build("Vendorn_{0}",v.Local.iCount,v.Local.sHeader)
+	f.intrinsic.String.Build("Vendor Name {0}",v.Local.iCount,v.Local.sCaption)
+	gui.fInvDash.GsGCInvDash.ColumnEdit("InvDashGrid",v.Local.sHeader,"Combobox",v.Local.svend)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"headerforecolor", v.Color.PRI-GSS-00)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"headerfontbold", true)	
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"caption",v.Local.sCaption)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"readonly", false)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"allowedit", true)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"MinWidth", 160)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"MaxWidth", 180)
+'	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"cellbackcolor", "WhiteSmoke")
+	
+	f.intrinsic.String.Build("USER_DEFINED_PART_{0}",v.Local.iCount,v.Local.sHeader)
+	f.intrinsic.String.Build("{1} {0}",v.Local.iCount,V.Local.sTitle,v.Local.sCaption)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"headerforecolor", v.Color.PRI-GSS-00)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"headerfontbold", true)	
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"caption",v.Local.sCaption)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"readonly", false)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"allowedit", true)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"MinWidth", 130)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"MaxWidth", 150)
+'	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"cellbackcolor", "WhiteSmoke")
+	
+	f.intrinsic.String.Build("MFG_NAME_{0}",v.Local.iCount,v.Local.sHeader)
+	f.intrinsic.String.Build("Manufacturer Name {0}",v.Local.iCount,v.Local.sCaption)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"headerforecolor", v.Color.PRI-GSS-00)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"headerfontbold", true)	
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"caption",v.Local.sCaption)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"readonly", false)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"allowedit", true)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"MinWidth", 160)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"MaxWidth", 180)
+'	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"cellbackcolor", "WhiteSmoke")
+	
+	f.intrinsic.String.Build("MFG_PART_{0}",v.Local.iCount,v.Local.sHeader)
+	f.intrinsic.String.Build("Manufacturer Part {0}",v.Local.iCount,v.Local.sCaption)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"headerforecolor", v.Color.PRI-GSS-00)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"headerfontbold", true)	
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"caption",v.Local.sCaption)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"readonly", false)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"allowedit", true)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"MinWidth", 130)
+	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"MaxWidth", 150)
+'	gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid",v.Local.sHeader,"cellbackcolor", "WhiteSmoke")
+	
+
+f.Intrinsic.Control.Next(v.Local.iCount)
+
+
+gui.fNewPrt.txtPart.MaxLength(17)
+gui.fNewPrt.txtRev.MaxLength(3)
+gui.fNewPrt.txtLoc.MaxLength(2)
+gui.fNewPrt.txtDesc.MaxLength(30)
+gui.fNewPrt.txtPart.MaxLength(17)
+gui.fNewPrt.txtAltCost.NumericOnly(1)
+gui.fNewPrt.txtLstPrc.NumericOnly(1)
+gui.fNewPrt.txtOrdQty.NumericOnly(1)
+gui.fNewPrt.txtReOrd.NumericOnly(1)
+gui.fNewPrt.txtSftStk.NumericOnly(1)
+gui.fNewPrt.txtLT.NumericOnly(2)
+
+
+'gui.fInvDash.GsGCInvDash.AddStyleFormatCondition("InvDashGrid","edit","ffctag","equal","N")
+'gui.fInvDash.GsGCInvDash.SetStyleFormatConditionProperty("InvDashGrid","edit","ffctag","backcolor","white")
+'gui.fInvDash.GsGCInvDash.SetStyleFormatConditionProperty("InvDashGrid","edit","ffctag","ApplyToRow","true")
+
+'cond formatting to high light edited rows
+gui.fInvDash.GsGCInvDash.AddStyleFormatCondition("InvDashGrid","edit","ffcntag","equal","Y")
+gui.fInvDash.GsGCInvDash.SetStyleFormatConditionProperty("InvDashGrid","edit","ffcntag","backcolor","LightSteelBlue")
+gui.fInvDash.GsGCInvDash.SetStyleFormatConditionProperty("InvDashGrid","edit","ffcntag","ApplyToRow","true")
+gui.fInvDash.GsGCInvDash.AddStyleFormatCondition("InvDashGrid","copy","ffdoctag","greater","1")
+gui.fInvDash.GsGCInvDash.SetStyleFormatConditionProperty("InvDashGrid","copy","ffdoctag","backcolor","AquaMarine")
+
+gui.fInvDash.GsGCInvDash.SetGridviewProperty("InvDashGrid","Enableappearanceoddrow",True)
+gui.fInvDash.GsGCInvDash.SetGridviewProperty("InvDashGrid","OptionsFindAlwaysVisible",True)
+gui.fInvDash.GsGCInvDash.SetGridviewProperty("InvDashGrid","OptionsViewShowAutoFilterRow",True)
+
+gui.fInvDash.GsGCInvDash.MainView("InvDashGrid")
+f.Intrinsic.Control.CallSub(DeSerialize)
+
+gui.fInvDash.GsGCInvDash.anchor(15)
+gui.fInvDash.cmdNewPart.anchor(2)
+gui.fInvDash.cmdRefresh.anchor(2)
+gui.fInvDash.cmdSaveChng.anchor(2)
+gui.fInvDash.cmdxptoxl.anchor(2)
+gui.fInvDash..Enabled(true)
+Function.Intrinsic.UI.CloseWaitDialog
+
+'Check user's menu perms
+'Inventory > File > Inventory Parts > New
+F.Global.Security.CheckUserAccessIPM(310,2,V.Local.bPerms)
+Gui.fInvDash.cmdNewPart.Enabled(V.Local.bPerms)
+'Inventory > File > Inventory Parts > Open
+F.Global.Security.CheckUserAccessIPM(310,1,V.Local.bPerms)
+Gui.fInvDash.cmdSaveChng.Enabled(V.Local.bPerms)
+'Inventory > File > Inventory Parts > Copy
+F.Global.Security.CheckUserAccessIPM(310,3,V.Global.bCopy)
+F.Intrinsic.Control.If(V.Global.bCopy.Not)
+	Gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Copy","visible",False)
+	Gui.fInvDash.GsGCInvDash.SetColumnProperty("InvDashGrid","Copy","AllowShowHide",False)
+F.Intrinsic.Control.EndIf
+
+gui.fInvDash..Show
+gui.fInvDash..SetFocus
+
+
+
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.fInvDash_UnLoad.Start
+f.Intrinsic.Control.CallSub(Serialize)
+f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.End
+Program.Sub.fInvDash_UnLoad.End
+
+Program.Sub.cmdNewPart_Click.Start
+gui.fNewPrt..ClearScreen
+gui.fNewPrt.txtDesc.Text("")
+gui.fNewPrt.txtextDesc.Text("")
+gui.fNewPrt.ddlpurchUM.Text("   ")
+gui.fNewPrt.ddlUM.Text("   ")
+gui.fNewPrt.ddlProdLn.Text("")
+gui.fNewPrt.ddlSource.Text("")
+gui.fNewPrt.ddlInAct.Text("")
+gui.fNewPrt.cboVendsrt.Text("")
+gui.fNewPrt.ddlUsrDef.Text("")
+gui.fNewPrt.txtLstPrc.Text("0")
+gui.fNewPrt.txtAltCost.Text("0")
+gui.fNewPrt.txtSftStk.Text("0")
+gui.fNewPrt.txtOrdQty.Text("0")
+gui.fNewPrt.txtReOrd.Text("0")
+gui.fNewPrt.txtLT.Text("0")
+gui.fNewPrt.txtPart.Text("")
+gui.fNewPrt.txtRev.Text("")
+gui.fNewPrt.txtloc.Text("")
+gui.fNewPrt.chkLotBin.Value(1)
+gui.fNewPrt.chkReqInsp.Value(1)
+gui.fNewPrt.cboCodeSort.Text("")
+gui.fInvDash..Enabled(false)
+
+gui.fNewPrt..Show
+Program.Sub.cmdNewPart_Click.End
+
+Program.Sub.fNewPrt_UnLoad.Start
+gui.fNewPrt..visible(false)
+gui.fNewPrt.txtDesc.Text("")
+gui.fNewPrt.txtextDesc.Text("")
+gui.fNewPrt.ddlpurchUM.Text("   ")
+gui.fNewPrt.ddlUM.Text("   ")
+gui.fNewPrt.ddlProdLn.Text("")
+gui.fNewPrt.ddlSource.Text("")
+gui.fNewPrt.ddlInAct.Text("")
+gui.fNewPrt.cboVendsrt.Text("")
+gui.fNewPrt.ddlUsrDef.Text("")
+gui.fNewPrt.txtLstPrc.Text("")
+gui.fNewPrt.txtAltCost.Text("")
+gui.fNewPrt.txtSftStk.Text("")
+gui.fNewPrt.txtOrdQty.Text("")
+gui.fNewPrt.txtReOrd.Text("")
+gui.fNewPrt.txtLT.Text("")
+gui.fNewPrt.txtPart.Text("")
+gui.fNewPrt.txtRev.Text("")
+gui.fNewPrt.txtloc.Text("")
+gui.fNewPrt.chkLotBin.Value(0)
+gui.fNewPrt.chkReqInsp.Value(0)
+gui.fNewPrt.cboCodeSort.Text("")
+
+gui.fInvDash..Enabled(true)
+gui.fInvDash..SetFocus
+f.Intrinsic.control.ExitSub
+
+Program.Sub.fNewPrt_UnLoad.End
+
+Program.Sub.cmdCrPart_Click.Start
+v.Local.sCheck.Declare(String)
+v.Local.sPart.Declare(string)
+v.Local.sRev.Declare(string)
+v.Local.sSQL.Declare(string)
+v.Local.sSrcCde.Declare(string)
+v.Local.sDesc.Declare(string)
+v.Local.sLoc.Declare(string)
+v.Local.sMSG.Declare(string)
+v.Local.sParam.Declare(string)
+v.Local.iPrice.Declare(float)
+v.Local.iCheck.Declare(long)
+v.Local.sPartRev.Declare(string)
+v.Local.sPartRevLoc.Declare(string)
+v.Local.sHold.Declare(String)
+v.Local.sRet.Declare(String)
+V.Local.sLotBin.Declare
+V.Local.sReqInsp.Declare
+f.Intrinsic.Control.try
+Function.Intrinsic.UI.InvokeWaitDialog("Validating Data","Create Part")
+
+v.Local.sCheck.set(v.Screen.fNewPrt!txtPart.Text.trim)
+f.Intrinsic.Control.If(v.Local.sCheck,=,"")
+	f.Intrinsic.UI.Msgbox("You need to enter a Part Number in the Part field")
+	Function.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.control.ExitSub
+f.Intrinsic.Control.endIf
+
+v.Local.sCheck.set(v.Screen.fNewPrt!ddlUM.Text.trim)
+f.Intrinsic.Control.If(v.Local.sCheck,=,"")
+	f.Intrinsic.UI.Msgbox("You need to select a valid unit of measure")
+	Function.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.control.ExitSub
+f.Intrinsic.Control.endIf
+
+v.Local.sCheck.set(v.Screen.fNewPrt!txtDesc.Text.trim)
+f.Intrinsic.Control.If(v.Local.sCheck,=,"")
+	f.Intrinsic.UI.Msgbox("Part needs to have an associated description")
+	Function.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.control.ExitSub
+f.Intrinsic.Control.endIf
+
+v.Local.sCheck.set(v.Screen.fNewPrt!ddlProdLn.Text.trim)
+f.Intrinsic.Control.If(v.Local.sCheck,=,"")
+	f.Intrinsic.UI.Msgbox("Part needs to have an associated Product line")
+	Function.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.control.ExitSub
+f.Intrinsic.Control.endIf
+
+f.Intrinsic.Control.CallSub(lostfocus)
+
+'format entered values to make it GSS friendly
+v.Local.sPart.Set(v.Screen.fNewPrt!txtPart.text)
+f.Intrinsic.String.RPad(v.Local.sPart," ",17,v.Local.sPart)
+f.Intrinsic.string.Left(v.Local.sPart,17,v.Local.sPart)
+v.Local.sRev.Set(v.Screen.fNewPrt!txtRev.text)
+f.Intrinsic.String.RPad(v.Local.sRev," ",3,v.Local.sRev)
+f.Intrinsic.string.Left(v.Local.sRev,3,v.Local.sRev)
+v.Local.sDesc.Set(v.Screen.fNewPrt!txtDesc.text)
+f.Intrinsic.String.RPad(v.Local.sDesc," ",30,v.Local.sDesc)
+f.Intrinsic.string.Left(v.Local.sDesc,30,v.Local.sDesc)
+
+v.Local.sLoc.Set(v.Screen.fNewPrt!txtLoc.text)
+f.Intrinsic.String.RPad(v.Local.sLoc," ",2,v.Local.sLoc)
+f.Intrinsic.string.Left(v.Local.sLoc,2,v.Local.sLoc)
+'check if part exists
+f.Intrinsic.string.Build("select count(part) from INVENTORY_MSTR where part = '{0}{1}' and LOCATION = '{2}'",v.Local.sPart.PSQLFriendly,v.Local.sRev.PSQLFriendly,v.Local.sLoc,v.local.sSQL)
+f.odbc.Connection!conx.ExecuteandReturn(v.Local.sSQL,v.Local.iCheck)
+f.Intrinsic.Control.If(v.Local.iCheck,>,0)
+	f.Intrinsic.string.Build("Part '{0}' Rev '{1}' at Location '{2}' already exists. Please enter a unique Part, Rev, Location combination.",v.Local.sPart.PSQLFriendly,v.Local.sRev.PSQLFriendly,v.Local.sLoc,v.local.sMSG)
+	f.Intrinsic.UI.Msgbox(v.Local.sMSG)
+	Function.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.control.ExitSub
+f.Intrinsic.Control.EndIf
+Gui.fNewPrt..Enabled(false)
+
+
+v.Local.iPrice.set(v.screen.fNewPrt!txtLstPrc.Text)
+'get code source based on selection
+f.data.Dictionary.ReturnKeyFromValue("cde2src",v.Screen.fNewPrt!ddlSource.Text,v.Local.sSrcCde)
+f.Intrinsic.String.Build("{0}{1}",v.Local.sPart,v.Local.sRev,v.Local.sPartRev)
+Function.Intrinsic.UI.CloseWaitDialog
+Function.Intrinsic.UI.InvokeWaitDialog("Creating Part","Create Part")
+'create part
+f.Global.Inventory.CreatePart(v.Local.sPartRev,v.Screen.fNewPrt!ddlUM.text.trim,v.Local.sDesc,v.Local.sLoc,v.Screen.fNewPrt!ddlProdLn.text,v.Local.sSrcCde,"","",v.Local.iPrice,"NOMAINT ")
+Function.Intrinsic.UI.CloseWaitDialog
+Function.Intrinsic.UI.InvokeWaitDialog("Updating  Part","Create Part")
+
+v.Local.sRet.Set(v.Screen.fNewPrt!txtextDesc.Text)
+'insert extra desc for part
+f.Intrinsic.string.build("INSERT INTO INV_EXTRA_TEXT VALUES ('{0}','{1}')",v.Local.sPartRev,v.Local.sRet.PSQLFriendly,v.Local.sSQL)
+f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'update inventory master with assosciated fields for part
+'also set lot bin flag
+F.Intrinsic.Control.If(V.Screen.fNewPrt!chkLotBin.CheckedAsBoolean)
+	V.Local.sLotBin.Set("Y")
+F.Intrinsic.Control.Else
+	V.Local.sLotBin.Set("N")
+F.Intrinsic.Control.EndIf
+f.Intrinsic.string.build("UPDATE INVENTORY_MSTR SET UM_PURCHASING = '{0}',AMT_ALT_COST = '{1}', QTY_SAFETY = '{2}',QTY_ORDER = '{3}',TIME_MATERIAL_LEAD = '{4}', FLAG_INACTIVE = '{5}', QTY_REORDER = '{6}', FLAG_LOT = '{9}', CODE_SORT = '{10}' WHERE PART = '{7}' and LOCATION = '{8}'",v.Screen.fNewPrt!ddlpurchUM.text,v.Screen.fNewPrt!txtAltCost.text,v.Screen.fNewPrt!txtSftStk.text,v.Screen.fNewPrt!txtOrdQty.text,v.Screen.fNewPrt!txtLT.text,v.Screen.fNewPrt!ddlInAct.text,v.Screen.fNewPrt!txtReOrd.text,v.Local.sPartRev,v.Local.sLoc,V.Local.sLotBin,V.Screen.fNewPrt!cboCodeSort.Text,v.Local.sSQL)
+f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+
+'update inventory master 2 with assosciated fields for part
+'also set requires inspection
+F.Intrinsic.Control.If(v.Screen.fNewPrt!chkReqInsp.CheckedAsBoolean)
+	V.Local.sReqInsp.Set("Y")
+F.Intrinsic.Control.Else
+	V.Local.sReqInsp.Set("N")
+F.Intrinsic.Control.EndIf
+f.Intrinsic.string.build("UPDATE INVENTORY_MST2 SET NAME_VENDOR = '{0}', TEXT_INFO1 = '{1}', REQUIRES_INSP = '{4}' WHERE PART = '{2}' and LOCATION = '{3}'",v.Screen.fNewPrt!cboVendsrt.Text,v.Screen.fNewPrt!ddlUsrDef.text,v.Local.sPartRev.PSQLFriendly,v.Local.sLoc,V.Local.sReqInsp,v.Local.sSQL)
+f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+Function.Intrinsic.UI.CloseWaitDialog
+Function.Intrinsic.UI.InvokeWaitDialog("Launching Inventory Header","Create Part")
+f.Intrinsic.string.Build("O!*!{0}!*!{1}",v.Local.sPartRev,v.Local.sLoc,v.Local.sParam)
+Function.Global.General.CallWrapperASync(300000,v.Local.sParam)
+	
+
+Function.Intrinsic.UI.CloseWaitDialog
+
+gui.fInvDash.GsGCInvDash.SuspendLayout()
+f.intrinsic.String.Build("{0}{1}",v.Local.sPartRev,v.Local.sLoc,v.Local.sPartRevLoc)
+'format ext desc to display in single line
+f.Intrinsic.String.Build(" {0}",v.ASCII.29,v.Local.sHold)
+f.Intrinsic.String.Replace(v.Local.sRet,v.Ambient.NewLine,v.Local.sHold,v.Local.sRet)
+'add row to datatable to make the part visible in grid
+f.Data.DataTable.AddRow("invdash","part_rev_loc",v.local.sPartRevLoc,"Part_rev",v.Local.sPartRev,"Part",v.Local.sPart,"rev",v.Local.sRev,"Location",v.Local.sLoc,"Description",v.Local.sDesc,"Ext_desc",v.Local.sRet,"UM_INVENTORY",v.Screen.fNewPrt!ddlUM.text,"PRODUCT_LINE",v.Screen.fNewPrt!ddlProdLn.text,"source",v.Local.sSrcCde,"Sourcen",v.Screen.fNewPrt!ddlSource.Text,"AMT_PRICE",v.Local.iPrice,"AMT_COST",0.0000,"AMT_ALT_COST",v.Screen.fNewPrt!txtAltCost.text,"UM_PURCHASING",v.Screen.fNewPrt!ddlpurchUM.text,"TIME_MATERIAL_LEAD",v.Screen.fNewPrt!txtLT.text,"QTY_SAFETY",v.Screen.fNewPrt!txtSftStk.text,"QTY_ORDER",v.Screen.fNewPrt!txtOrdQty.text,"VEND_SORT",v.Screen.fNewPrt!cboVendsrt.Text,"Part_type",v.Screen.fNewPrt!ddlUsrDef.text,"QTY_ONHAND",0.0000,"IN_TRANSIT",0.0000,"QTY_ONORDER_PO",0.0000,"QTY_ONORDER_WO",0.0000,"QTY_ONORDER",0.0000,"QTY_REQUIRED",0.0000,"NET",0.0000,"QTY_REORDER",v.Screen.fNewPrt!txtReOrd.text,"FLAG_INACTIVE",v.Screen.fNewPrt!ddlInAct.text,"FLAG_LOT",V.Local.sLotBin,"REQUIRES_INSP",V.Local.sReqInsp,"CODE_SORT",V.Screen.fNewPrt!cboCodeSort.Text,"edit","N") 
+f.Intrinsic.Control.CallSub(fNewPrt_UnLoad)
+Gui.fNewPrt..Enabled(true)
+gui.fInvDash.GsGCInvDash.ResumeLayout()
+gui.fInvDash..Enabled(true)
+
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmdCrPart_Click.End
+
+Program.Sub.GsGCInvDash_RowCellClick.Start
+v.Local.sParam.Declare(string)
+v.Local.sPart.Declare(string)
+v.Local.sLoc.Declare(string)
+v.Local.sHold.Declare(string)
+V.Local.bRunning.Declare
+v.Local.sRet.Declare(string)
+f.Intrinsic.Control.try
+	
+f.Intrinsic.Control.SelectCase(v.args.column)
+
+f.Intrinsic.Control.Case("EXT_DESC")
+'brings up text box to edit the ext desc
+	gui.fInvDash..Enabled(false)
+	gui.fExtDesc.cmdSaveExtDesc.Enabled(false)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","PART_REV_LOC",v.Args.RowIndex,v.Local.sRet)
+	f.Intrinsic.String.Build("Extended description for part {0}",v.Local.sRet,v.Local.sRet)
+	gui.fExtDesc..Caption(v.Local.sRet)
+	gui.fExtDesc.txtExtDesc.SetMetaData(v.args.RowIndex)
+	
+	
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","EXT_DESC",v.Args.RowIndex,v.Local.sRet)
+	f.Intrinsic.String.Build(" {0}",v.ASCII.29,v.Local.sHold)
+	f.Intrinsic.String.Replace(v.Local.sRet,v.Local.sHold,v.Ambient.NewLine,v.Local.sRet)
+	gui.fExtDesc.txtExtDesc.text(v.Local.sRet)
+	
+		
+	
+	gui.fExtDesc..Show
+
+f.Intrinsic.Control.Case("Copy")
+'brings up the create new part screen and copies over all the info to the fields in the new part screen
+	v.Local.sExtDesc.Declare(string)
+	v.Local.sUM.Declare(string)
+	v.Local.sPurchUM.Declare(string)
+	v.Local.sPL.Declare(string)
+	v.Local.sSrc.Declare(string)
+	v.Local.sVendsrt.Declare(string)
+	v.Local.sPartType.Declare(string)
+	v.Local.sflag.Declare(string)
+	v.Local.iPrice.Declare(float)
+	v.Local.iAltCost.Declare(float)
+	v.Local.iSafStock.Declare(float)
+	v.Local.iOrdQty.Declare(float)
+	v.Local.iReOrd.Declare(float)
+	v.Local.iLT.Declare(Long)
+	V.Local.sLotBin.Declare
+	V.Local.sReqInsp.Declare
+	V.Local.sSortCode.Declare
+	
+	F.Intrinsic.Control.If(V.Global.bCopy.Not)
+		'User does not have permissions for copy
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+	
+	gui.fInvDash..Enabled(false)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","Description",v.Args.RowIndex,v.Local.sDesc)
+	
+	
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","Ext_desc",v.Args.RowIndex,v.Local.sExtDesc)
+	f.Intrinsic.String.Build(" {0}",v.ASCII.29,v.Local.sHold)
+	f.Intrinsic.String.Replace(v.Local.sExtDesc,v.Local.sHold,v.Ambient.NewLine,v.Local.sExtDesc)
+	
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","UM_PURCHASING",v.Args.RowIndex,v.Local.sPurchUM)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","UM_INVENTORY",v.Args.RowIndex,v.Local.sUM)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","Product_Line",v.Args.RowIndex,v.Local.sPL)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","Sourcen",v.Args.RowIndex,v.Local.sSrc)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","Flag_Inactive",v.Args.RowIndex,v.Local.sflag)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","Vend_Sort",v.Args.RowIndex,v.Local.sVendsrt)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","part_type",v.Args.RowIndex,v.Local.sPartType)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","AMT_PRICE",v.Args.RowIndex,v.Local.iPrice)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","AMT_ALT_COST",v.Args.RowIndex,v.Local.iAltCost)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","QTY_SAFETY",v.Args.RowIndex,v.Local.iSafStock)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","QTY_ORDER",v.Args.RowIndex,v.Local.iOrdQty)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","QTY_REORDER",v.Args.RowIndex,v.Local.iReOrd)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","TIME_MATERIAL_LEAD",v.Args.RowIndex,v.Local.iLT)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","FLAG_LOT",v.Args.RowIndex,v.Local.sLotBin)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","REQUIRES_INSP",v.Args.RowIndex,v.Local.sReqInsp)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","CODE_SORT",v.Args.RowIndex,v.Local.sSortCode)
+	
+	gui.fNewPrt.txtDesc.Text(v.Local.sDesc)
+	gui.fNewPrt.txtextDesc.Text(v.Local.sExtDesc)
+	gui.fNewPrt.ddlpurchUM.Text(v.Local.sPurchUM)
+	gui.fNewPrt.ddlUM.Text(v.Local.sUM)
+	gui.fNewPrt.ddlProdLn.Text(v.Local.sPL)
+	gui.fNewPrt.ddlSource.Text(v.Local.sSrc)
+	gui.fNewPrt.ddlInAct.Text(v.Local.sflag)
+	gui.fNewPrt.cboVendsrt.Text(v.Local.sVendsrt)
+	gui.fNewPrt.ddlUsrDef.Text(v.Local.sPartType)
+	gui.fNewPrt.txtLstPrc.Text(v.Local.iPrice)
+	gui.fNewPrt.txtAltCost.Text(v.Local.iAltCost)
+	gui.fNewPrt.txtSftStk.Text(v.Local.iSafStock)
+	gui.fNewPrt.txtOrdQty.Text(v.Local.iOrdQty)
+	gui.fNewPrt.txtReOrd.Text(v.Local.iReOrd)
+	gui.fNewPrt.txtLT.Text(v.Local.iLT)
+	F.Intrinsic.Control.If(V.Local.sLotBin,=,"Y")
+		Gui.fNewPrt.chkLotBin.Value(1)
+	F.Intrinsic.Control.Else
+		Gui.fNewPrt.chkLotBin.Value(0)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Local.sReqInsp,=,"Y")
+		Gui.fNewPrt.chkReqInsp.Value(1)
+	F.Intrinsic.Control.Else
+		Gui.fNewPrt.chkReqInsp.Value(0)
+	F.Intrinsic.Control.EndIf
+	Gui.fNewPrt.cboCodeSort.Text(V.Local.sSortCode)
+	
+	f.Intrinsic.control.CallSub(lostfocus)
+	
+	gui.fNewPrt..Show
+	
+
+f.Intrinsic.Control.Case("Doc_Con")
+'launch document control
+	v.Local.sDesc.Declare(string)
+	V.Local.iPID.Declare(long)
+	gui.fInvDash..Enabled(false)
+	Function.Intrinsic.UI.InvokeWaitDialog("Launching Document Control","Launch GSS MENU")
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","PART_REV_LOC",v.Args.RowIndex,v.Local.sPart)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","Description",v.Args.RowIndex,v.Local.sDesc)
+	F.Global.DocumentControl.Invoke(V.Local.sPart,30,v.Local.sDesc,V.Local.iPID)
+	
+'	V.Local.bRunning.Set(True)
+'	F.Intrinsic.Control.DoUntil(V.Local.bRunning.Not)
+'		F.Intrinsic.Task.PIDRunning(V.Local.iPID,V.Local.bRunning)
+'	F.Intrinsic.Control.Loop
+	
+'	'Check if part has a document reference
+'	F.Intrinsic.String.Build("select 1 from LINK_DATA where TYPE = '00030' and ID = '{0}';",V.Local.sPart,V.Local.sRet)
+'	F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sRet,V.Local.sRet)
+'	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF.Not)
+'		Gui.fInvDash.GsGCInvDash.SetCellAppearance("InvDashGrid",33,V.Args.RowIndex,"Icon","DCS-ON")
+'	F.Intrinsic.Control.Else
+'		Gui.fInvDash.GsGCInvDash.SetCellAppearance("InvDashGrid",33,V.Args.RowIndex,"Icon","DCS-OFF")
+'	F.Intrinsic.Control.EndIf
+
+	Function.Intrinsic.UI.CloseWaitDialog
+	gui.fInvDash..Enabled(true)
+	Gui.fInvDash..SetFocus
+f.Intrinsic.Control.Case("QTY_REQUIRED")
+'launch supply and demand
+	gui.fInvDash..Enabled(false)	
+	Function.Intrinsic.UI.InvokeWaitDialog("Launching Supply and Demand","Launch GSS MENU")
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","PART_REV",v.Args.RowIndex,v.Local.sPart)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","LOCATION",v.Args.RowIndex,v.Local.sLoc)
+	f.Intrinsic.string.Build("{0}!*!{1}!*!",v.Local.sPart,v.Local.sLoc,v.Local.sParam)
+	
+	Function.Global.General.CallWrapperASync(300011,v.Local.sParam)
+	Function.Intrinsic.UI.CloseWaitDialog
+	gui.fInvDash..Enabled(true)
+	Gui.fInvDash..SetFocus
+f.Intrinsic.Control.Case("PRODUCT_LINE")
+
+'launch inventory header
+f.Intrinsic.Control.Case("PART")
+	V.Local.bPerms.Declare
+	V.Local.bPerms.Set(V.Screen.fInvDash!cmdSaveChng.Enabled)
+	gui.fInvDash..Enabled(false)
+	Function.Intrinsic.UI.InvokeWaitDialog("Launching Inventory Header","Launch GSS MENU")
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","PART_REV",v.Args.RowIndex,v.Local.sPart)
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","LOCATION",v.Args.RowIndex,v.Local.sLoc)
+	F.Intrinsic.Control.If(V.Local.bPerms)
+		f.Intrinsic.string.Build("O!*!{0}!*!{1}",v.Local.sPart,v.Local.sLoc,v.Local.sParam)
+	F.Intrinsic.Control.Else
+		f.Intrinsic.string.Build("V!*!{0}!*!{1}",v.Local.sPart,v.Local.sLoc,v.Local.sParam)
+	F.Intrinsic.Control.EndIf
+	Function.Global.General.CallWrapperASync(300000,v.Local.sParam)
+	Function.Intrinsic.UI.CloseWaitDialog
+	gui.fInvDash..Enabled(true)
+	Gui.fInvDash..SetFocus
+f.Intrinsic.Control.CaseElse
+
+
+	f.Intrinsic.Control.ExitSub
+
+
+f.Intrinsic.Control.EndSelect
+
+
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGCInvDash_RowCellClick.End
+
+Program.Sub.txtExtDesc_Change.Start
+gui.fExtDesc.cmdSaveExtDesc.Enabled(True)
+f.Intrinsic.Control.ExitSub
+Program.Sub.txtExtDesc_Change.End
+
+Program.Sub.cmdSaveExtDesc_Click.Start
+v.Local.sPartRev.Declare(string)
+v.Local.sSql.declare(string)
+v.Local.iCheck.declare(long,0)
+v.Local.sMsg.Declare(string)
+v.Local.sHold.Declare(string)
+v.Local.sRet.Declare(string)
+v.Local.sExtDesc.Declare(string)
+gui.fExtDesc..enabled(false)
+
+f.Intrinsic.Control.try
+gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","PART_REV",v.Screen.fExtDesc!txtExtDesc.MetaData0,v.Local.sPartRev)
+
+f.Intrinsic.string.Build("select count(part) from INV_EXTRA_TEXT where part = '{0}'",v.Local.sPartRev,v.local.sSql)
+f.odbc.Connection!conx.executeandreturn(v.local.sSql,v.Local.iCheck)
+v.Local.sExtDesc.set(v.Screen.fExtDesc!txtExtDesc.Text)
+'check if ext desc exists then update else insert new row for part
+f.intrinsic.Control.If(v.Local.iCheck,>,0)
+	f.Intrinsic.String.Build("UPDATE INV_EXTRA_TEXT SET TEXT = '{0}' WHERE PART = '{1}'",v.Local.sExtDesc.PSQLFriendly,v.Local.sPartRev.PSQLFriendly,v.local.sSql)
+	f.odbc.Connection!conx.Execute(v.Local.sSql)
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.Build("INSERT INTO INV_EXTRA_TEXT VALUES ('{0}','{1}')",v.Local.sPartRev.PSQLFriendly,v.Local.sExtDesc.PSQLFriendly,v.local.sSql)
+	f.odbc.Connection!conx.Execute(v.Local.sSql)
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build(" {0}",v.ASCII.29,v.Local.sHold)
+f.Intrinsic.String.Replace(v.Screen.fExtDesc!txtExtDesc.Text,v.Ambient.NewLine,v.Local.sHold,v.Local.sRet)
+
+gui.fInvDash.GsGCInvDash.SetCellValueByColumnName("InvDashGrid","EXT_DESC",v.Screen.fExtDesc!txtExtDesc.MetaData0,v.Local.sRet)
+
+f.Intrinsic.String.Build("Successfully saved extended description for part {0}",v.Local.sPartRev,v.Local.sMsg)
+f.Intrinsic.UI.Msgbox(v.Local.sMsg)
+gui.fExtDesc.cmdSaveExtDesc.Enabled(false)
+gui.fExtDesc..enabled(true)
+f.Intrinsic.Control.CallSub(fExtDesc_UnLoad)
+
+
+f.Intrinsic.Control.ExitSub
+
+
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmdSaveExtDesc_Click.End
+
+Program.Sub.fExtDesc_UnLoad.Start
+gui.fExtDesc..Visible(false)
+gui.fExtDesc..ClearScreen
+
+gui.fInvDash..Enabled(true)
+gui.fInvDash..SetFocus
+Program.Sub.fExtDesc_UnLoad.End
+
+Program.Sub.GsGCInvDash_CellValueChanged.Start
+v.Local.sSourceN.Declare(string)
+'update hidden edit column to Y when any cell value is changed
+f.Intrinsic.Control.Try
+
+'f.Data.DataTable.SetValue("invdash",v.Args.rowhandle,"Edit","Y")
+gui.fInvDash.GsGCInvDash.SetCellValueByColumnName("InvDashGrid","edit",v.Args.rowindex,"Y")
+f.Intrinsic.Control.If(v.Args.column,=,"SOURCEN")
+	gui.fInvDash.GsGCInvDash.GetCellValueByColumnName("InvDashGrid","sourceN",v.Args.rowindex,v.Local.sSourceN)
+	f.Data.Dictionary.ReturnKeyFromValue("cde2src",v.Local.sSourceN,v.Local.sSourceN)
+	gui.fInvDash.GsGCInvDash.SetCellValueByColumnName("InvDashGrid","source",v.Args.rowindex,v.Local.sSourceN)
+'	f.data.Datatable.SetValue("invdash",v.args.rowhandle,"source",v.Local.sSourceN)
+
+F.Intrinsic.Control.ElseIf(V.Args.Column.UCase,=,"CODE_SORT")
+	F.Data.DataTable.SetValue("InvDash",V.Args.RowIndex,"CODE_SORT",V.Args.Value.UCase)
+F.Intrinsic.Control.EndIf
+
+
+
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.GsGCInvDash_CellValueChanged.End
+
+Program.Sub.fXlExport_UnLoad.Start
+gui.fXlExport..Visible(false)
+gui.fXlExport..ClearScreen
+gui.fInvDash..Enabled(true)
+gui.fInvDash..SetFocus
+
+Program.Sub.fXlExport_UnLoad.End
+
+Program.Sub.cmdSelectFold_Click.Start
+v.local.sFolder.Declare(string)
+f.Intrinsic.Control.Try
+'if no folder is selected the path will default to global directory
+f.Intrinsic.UI.FolderBrowser("Select a Destination Folder",v.Local.sFolder)
+f.Intrinsic.Control.If(v.Local.sFolder,<>,"***CANCEL***")
+	gui.fXlExport.txtXPFold.text(v.Local.sFolder)	
+f.Intrinsic.control.Else
+	gui.fXlExport.txtXPFold.text(v.Caller.GlobalDir)
+f.Intrinsic.Control.EndIf
+
+
+
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSelectFold_Click.End
+
+Program.Sub.cmdExportToXL_Click.Start
+v.Local.sOutFile.Declare(String)
+v.Local.sMsg.Declare(String)
+v.Local.bCheck.Declare(boolean)
+v.Local.sOutFile.Set(v.Screen.fXlExport!txtXPName.text)
+V.Local.sFileExport.Declare(String)
+
+f.Intrinsic.Control.try
+
+gui.fInvDash..Enabled(false)
+
+Function.Intrinsic.Control.BlockEvents
+
+
+
+F.Intrinsic.String.Build("{0}\GCG_5875_INVDASH.xlsx",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+f.Intrinsic.File.Exists(v.Local.sFileExport,v.Local.bCheck)
+F.Intrinsic.Control.If(v.Local.bCheck,=,true)
+	f.Intrinsic.File.DeleteFile(v.Local.sFileExport)
+F.Intrinsic.Control.EndIf
+gui.fInvDash.GsGCInvDash.Export(V.Local.sFileExport,"xlsx")
+f.Intrinsic.File.Exists(v.Local.sFileExport,v.Local.bCheck)
+
+F.Intrinsic.Control.If(v.Local.bCheck,=,False)
+	f.Intrinsic.UI.Msgbox("Export cancelled (File does not exist)")
+	gui.fInvDash..SetFocus
+	gui.fInvDash..Enabled(True)
+	Function.Intrinsic.Control.UNBlockEvents
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+
+Function.Intrinsic.Control.UNBlockEvents
+gui.fInvDash..SetFocus
+gui.fInvDash..Enabled(True)
+F.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdExportToXL_Click.End
+
+'Program.Sub.GsGCInvDash_MouseCellEnter.Start
+'gui.fInvDash.GsGCInvDash.SetRowAppearance("InvDashGrid",v.args.row,"backcolor","LightSteelBlue")
+
+'Program.Sub.GsGCInvDash_MouseCellEnter.End
+
+'Program.Sub.GsGCInvDash_MouseCellExit.Start
+'gui.fInvDash.GsGCInvDash.SetRowAppearance("InvDashGrid",v.args.row,"backcolor","White")
+'Program.Sub.GsGCInvDash_MouseCellExit.End
+Program.Sub.lostfocus.Start
+v.Local.sTemp.Declare(String)
+
+'force uppercase on new part screen when lost focus is triggered
+f.Intrinsic.Control.try
+v.Local.sTemp.Set(v.Screen.fNewPrt!txtPart.text)
+F.Intrinsic.String.Format(v.Local.sTemp,">",v.Local.sTemp)
+gui.fNewPrt.txtPart.Text(v.Local.sTemp)
+v.Local.sTemp.Set(v.Screen.fNewPrt!txtRev.text)
+F.Intrinsic.String.Format(v.Local.sTemp,">",v.Local.sTemp)
+gui.fNewPrt.txtRev.Text(v.Local.sTemp)
+v.Local.sTemp.Set(v.Screen.fNewLoc!txtLoc.text)
+F.Intrinsic.String.Format(v.Local.sTemp,">",v.Local.sTemp)
+gui.fNewPrt.txtLoc.Text(v.Local.sTemp)
+'format numerics on new part screen when lost focus is triggered
+v.Local.sTemp.Set(v.Screen.fNewPrt!txtLstPrc.text)
+F.Intrinsic.String.Format(v.Local.sTemp, "#########0.0000", v.Local.sTemp)
+gui.fNewPrt.txtLstPrc.Text(v.Local.sTemp)
+
+v.Local.sTemp.Set(v.Screen.fNewPrt!txtAltCost.text)
+F.Intrinsic.String.Format(v.Local.sTemp, "#########0.0000", v.Local.sTemp)
+gui.fNewPrt.txtAltCost.Text(v.Local.sTemp)
+
+v.Local.sTemp.Set(v.Screen.fNewPrt!txtReOrd.text)
+F.Intrinsic.String.Format(v.Local.sTemp, "#########0.0000", v.Local.sTemp)
+gui.fNewPrt.txtReOrd.Text(v.Local.sTemp)
+
+v.Local.sTemp.Set(v.Screen.fNewPrt!txtOrdQty.text)
+F.Intrinsic.String.Format(v.Local.sTemp, "#########0.0000", v.Local.sTemp)
+gui.fNewPrt.txtOrdQty.Text(v.Local.sTemp)
+
+v.Local.sTemp.Set(v.Screen.fNewPrt!txtSftStk.text)
+F.Intrinsic.String.Format(v.Local.sTemp, "#########0.0000", v.Local.sTemp)
+gui.fNewPrt.txtSftStk.Text(v.Local.sTemp)
+
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.lostfocus.End
+
+Program.Sub.Reload_Dash.Start
+gui.fInvDash..Visible(false)
+'trigerred by refresh/reload button
+
+f.Intrinsic.Control.try
+
+f.Intrinsic.Control.CallSub(Serialize)
+
+f.Data.Dataview.Close("InvDash","InvDashVw")
+f.Data.DataTable.Close("InvDash")
+
+'f.Data.dictionary.Close("venddict")
+f.Data.dictionary.Close("cde2src")
+f.ODBC.Connection!conx.Close
+
+
+gui.fInvDash.GsGCInvDash.ClearRows("InvDashGrid")
+
+f.Intrinsic.Control.CallSub(main)
+
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.Reload_Dash.End
+
+Program.Sub.cmdSaveChng_Click.Start
+v.Local.iCheck.Declare(long)
+v.Local.icount.Declare(long)
+v.Local.icount2.Declare(long)
+v.Local.bCheck.Declare(boolean)
+v.Local.sCheck.Declare(string)
+v.Local.sCheck1.Declare(string)
+v.Local.sCheck2.Declare(string)
+v.Local.sCheck3.Declare(string)
+v.Local.sSQL.Declare(string)
+v.Local.sDesc.Declare(string)
+v.Local.sMSG.Declare(string)
+v.Local.sLogFile.Declare(string)
+v.Local.sHeader.Declare(string)
+v.Local.sActVend.Declare(string)
+v.Local.sHeader1.Declare(string)
+v.Local.sHeader2.Declare(string)
+v.Local.sHeader3.Declare(string)
+v.Local.sVal1.Declare(string)
+v.Local.sVal2.Declare(string)
+v.Local.sVal3.Declare(string)
+v.Local.sActPart.Declare(string)
+v.Local.sRet.Declare(string)
+v.Local.iHandle.Declare(long)
+v.Local.sSourceN.Declare(string)
+v.Local.sSrcCde.Declare(string)
+
+f.Intrinsic.Control.Try
+
+gui.fInvDash..Enabled(false)
+Function.Intrinsic.UI.InvokeWaitDialog("Saving Changes to Global Shop","Save Changes")
+'create view of rows with edit flag as Y
+f.data.Dataview.Create("invdash","savinvw",22,"edit = 'Y'","")
+f.Data.DataView.ToDataTable("invdash","savinvw","savindt")
+f.Intrinsic.Control.if(v.DataView.InvDash!savinvw.RowCount,=,0)
+	Function.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.UI.Msgbox("No changes have been made as nothing has been edited on the grid.")
+	gui.fInvDash..Enabled(True)
+	gui.fInvDash..SetFocus
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+'check if log file exists, and if it does delete and create new one
+f.Intrinsic.String.build("{0}\inv_dash_save_chg.txt",v.Caller.GlobalDir,v.Local.sLogFile)
+f.Intrinsic.File.Exists(v.Local.sLogFile,v.Local.bCheck)
+f.Intrinsic.Control.If(v.Local.bCheck,=,true)
+
+	f.Intrinsic.file.DeleteFile(v.Local.sLogFile)
+
+f.Intrinsic.Control.EndIf
+
+
+Function.Intrinsic.String.Concat(v.Ambient.Now,": Update started",V.Ambient.Newline,V.Local.sMSG)
+f.Intrinsic.File.String2File(v.Local.sLogFile,v.Local.sMSG)
+'for each row in view update the changes 	
+f.Intrinsic.Control.For(v.Local.icount,0,v.dataview.invdash!savinvw.RowCount--,1)
+v.Local.sCheck.Set(v.dataview.invdash!savinvw(v.Local.icount).PRODUCT_LINE!fieldval)
+v.Local.sCheck1.Set(v.dataview.invdash!savinvw(v.Local.icount).UM_INVENTORY!fieldval)
+'f.data.Dictionary.ReturnKeyFromValue("cde2src",v.dataview.invdash!savinvw(v.Local.icount).SOURCE!fieldval,v.Local.sSrcCde)
+v.Local.sSrcCde.Set(v.dataview.invdash!savinvw(v.Local.icount).SOURCE!fieldvalTrim)
+
+
+
+	f.Intrinsic.Control.If(v.Local.sCheck.trim,=,"")
+		
+		f.Intrinsic.string.build("Product line cannot be empty. Skipping update for part {0} Location {1}",v.dataview.invdash!savinvw(v.Local.icount).PART_REV!FIELDVALSTRINGPSQLFRIENDLY, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,v.local.sMSG)
+		Function.Intrinsic.String.Concat(v.local.sMSG,V.Ambient.Newline,V.Local.sMSG)
+		f.Intrinsic.File.Append2FileNewLine(v.Local.sLogFile,v.Local.sMSG)
+		
+	f.Intrinsic.Control.ElseIf(v.Local.sCheck1.trim,=,"")
+	
+		f.Intrinsic.string.build("Unit of Measure cannot be empty. Skipping update for part {0} Location {1}",v.dataview.invdash!savinvw(v.Local.icount).PART_REV!FIELDVALSTRINGPSQLFRIENDLY, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,v.local.sMSG)
+		f.Intrinsic.File.Append2FileNewLine(v.Local.sLogFile,v.Local.sMSG)
+		
+	f.Intrinsic.Control.Else
+		v.Local.sDesc.Set(v.dataview.invdash!savinvw(v.Local.icount).description!fieldval)
+
+
+
+		
+		f.Intrinsic.string.Left(v.Local.sDesc,30,v.Local.sDesc)
+		f.Intrinsic.string.build("UPDATE INVENTORY_MSTR SET UM_PURCHASING = '{0}',AMT_ALT_COST = '{1}', QTY_SAFETY = '{2}',QTY_ORDER = '{3}',TIME_MATERIAL_LEAD = '{4}'  WHERE PART = '{5}' and LOCATION = '{6}'", v.dataview.invdash!savinvw(v.Local.icount).UM_PURCHASING!fieldval, v.dataview.invdash!savinvw(v.Local.icount).AMT_ALT_COST!fieldval, v.dataview.invdash!savinvw(v.Local.icount).QTY_SAFETY!fieldval, v.dataview.invdash!savinvw(v.Local.icount).QTY_ORDER!fieldval, v.dataview.invdash!savinvw(v.Local.icount).TIME_MATERIAL_LEAD!fieldval,v.dataview.invdash!savinvw(v.Local.icount).PART_REV!FIELDVALSTRINGPSQLFRIENDLY, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval, v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.Intrinsic.string.build("UPDATE INVENTORY_MSTR SET QTY_REORDER = '{0}', UM_INVENTORY = '{1}', PRODUCT_LINE = '{2}' WHERE PART = '{3}' and LOCATION = '{4}'", v.dataview.invdash!savinvw(v.Local.icount).QTY_REORDER!fieldval, v.dataview.invdash!savinvw(v.Local.icount).UM_INVENTORY!fieldval,v.dataview.invdash!savinvw(v.Local.icount).Product_Line!fieldval, v.dataview.invdash!savinvw(v.Local.icount).PART_REV!FIELDVALSTRINGPSQLFRIENDLY, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.Intrinsic.string.build("UPDATE INVENTORY_MSTR SET FLAG_INACTIVE = '{0}', DESCRIPTION = '{1}', AMT_PRICE = '{2}', FLAG_LOT = '{5}', CODE_SORT = '{6}' WHERE PART = '{3}' and LOCATION = '{4}'",v.dataview.invdash!savinvw(v.Local.icount).FLAG_INACTIVE!fieldval, v.Local.sDesc.PSQLFriendly,v.dataview.invdash!savinvw(v.Local.icount).AMT_PRICE!fieldval,v.dataview.invdash!savinvw(v.Local.icount).PART_REV!FIELDVALSTRINGPSQLFRIENDLY,v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,V.DataView.InvDash!savinvw(V.Local.icount).FLAG_LOT!FieldVal,V.DataView.InvDash!savinvw(V.Local.icount).CODE_SORT!FieldVal,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		
+		
+		f.Intrinsic.string.build("UPDATE INVENTORY_MST2 SET NAME_VENDOR = '{0}', TEXT_INFO1 = '{1}', CODE_SOURCE = '{2}', REQUIRES_INSP = '{5}' WHERE PART = '{3}' AND LOCATION = '{4}'",v.dataview.invdash!savinvw(v.Local.icount).VEND_SORT!fieldval,v.dataview.invdash!savinvw(v.Local.icount).PART_TYPE!fieldval,v.dataview.invdash!savinvw(v.Local.icount).SOURCE!fieldvalTrim,v.dataview.invdash!savinvw(v.Local.icount).PART_REV!FIELDVALSTRINGPSQLFRIENDLY, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,v.DataView.InvDash!savinvw(V.Local.icount).REQUIRES_INSP!FieldVal,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		'dynamycally update crossreferences if changes are made to them
+		f.Intrinsic.Control.For(v.Local.icount2,1,v.Global.iMaxCount,1)
+		
+			f.intrinsic.String.Build("Vendorn_{0}",v.Local.iCount2,v.Local.sHeader)
+
+			f.intrinsic.String.Build("Vendor_{0}",v.Local.iCount2,v.Local.sActVend)
+			f.intrinsic.String.Build("USER_DEFINED_PART_{0}",v.Local.iCount2,v.Local.sHeader1)
+			v.Local.sVal1.Set(v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sHeader1]!fieldval)
+			f.Intrinsic.string.Left(v.Local.sVal1,30,v.Local.sVal1)
+			f.intrinsic.String.Build("MFG_NAME_{0}",v.Local.iCount2,v.Local.sHeader2)
+			v.Local.sVal2.Set(v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sHeader2]!fieldval)
+			f.Intrinsic.string.Left(v.Local.sVal2,23,v.Local.sVal2)
+			f.intrinsic.String.Build("MFG_PART_{0}",v.Local.iCount2,v.Local.sHeader3)
+			v.Local.sVal3.Set(v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sHeader3]!fieldval)
+			f.Intrinsic.string.Left(v.Local.sVal3,23,v.Local.sVal3)
+			f.intrinsic.String.Build("MFG_PARTA_{0}",v.Local.iCount2,v.Local.sActPart)
+	
+			f.Intrinsic.Control.If(v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sHeader]!fieldvaltrim,<>,"","AND",v.Local.sVal1.Trim,<>,"",v.Local.sVal2.trim,<>,"",v.Local.sVal3.trim,<>,"")
+				
+
+				
+				f.Intrinsic.Control.If(v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sActVend]!fieldvaltrim,=,"","AND",v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sActPart]!fieldvaltrim,=,"")
+					f.data.Dictionary.ReturnKeyFromValue("venddict",v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sHeader]!fieldval,v.Local.sRet)
+					f.Intrinsic.string.build("INSERT INTO INV_CROSS_REF (PART,LOCATION,VENDOR,USER_DEFINED_PART,MFG_NAME,MFG_PART,description,web_flag,PRTID) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','N','538976288')",v.dataview.invdash!savinvw(v.Local.icount).PART_REV!fieldVal, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,v.local.sRet,v.Local.sVal1,v.Local.sVal2,v.Local.sVal3,v.Local.sDesc.PSQLFriendly,v.Local.sSQL)
+					f.ODBC.Connection!conx.Execute(v.Local.sSQL)	
+					f.Data.dataview.SetValue("invdash","savinvw",v.Local.icount,v.Local.sActVend,v.Local.sRet,v.Local.sActPart,v.Local.sVal3)
+					
+				f.Intrinsic.Control.Else
+			
+					f.data.Dictionary.ReturnKeyFromValue("venddict",v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sHeader]!fieldval,v.Local.sRet)
+				
+					
+					f.Intrinsic.string.build("DELETE from INV_CROSS_REF WHERE part = '{0}' and location = '{1}' and vendor = '{2}' and MFG_PART = '{3}'",v.dataview.invdash!savinvw(v.Local.icount).PART_REV!FIELDVALSTRINGPSQLFRIENDLY, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sActVend]!fieldvaltrim,v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sActPart]!fieldvaltrim,v.Local.sSQL) 
+					f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+					f.Intrinsic.string.build("INSERT INTO INV_CROSS_REF (PART,LOCATION,VENDOR,USER_DEFINED_PART,MFG_NAME,MFG_PART,description,web_flag,PRTID) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','N','538976288')",v.dataview.invdash!savinvw(v.Local.icount).PART_REV!FIELDVALSTRINGPSQLFRIENDLY, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,v.local.sRet,v.Local.sVal1,v.Local.sVal2,v.Local.sVal3,v.Local.sDesc.PSQLFriendly,v.Local.sSQL)
+					f.ODBC.Connection!conx.Execute(v.Local.sSQL)	
+					f.Data.dataview.SetValue("invdash","savinvw",v.Local.icount,v.Local.sActVend,v.Local.sRet,v.Local.sActPart,v.Local.sVal3)
+									
+'					f.Intrinsic.string.build("UPDATE INV_CROSS_REF SET VENDOR = '{0}', USER_DEFINED_PART = '{1}', MFG_NAME = '{2}', MFG_PART = '{3}' WHERE part = '{4}' and location = '{5}' and vendor = '{6}' and MFG_PART = '{7}'",v.local.sRet,v.Local.sVal1,v.Local.sVal2,v.Local.sVal3, v.dataview.invdash!savinvw(v.Local.icount).PART_REV!fieldVal, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sActVend]!fieldvaltrim,v.dataview.invdash!savinvw(v.Local.icount).[v.Local.sActPart]!fieldvaltrim,v.Local.sSQL)
+'					f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+				f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.EndIf
+			
+			
+			
+			
+'		f.Intrinsic.Control.GoTo("skip")	
+'		f.Intrinsic.Control.Label("skip")	
+		
+		f.Intrinsic.Control.next(v.Local.icount2)
+		
+		
+		f.Intrinsic.string.build("Part {0} Location {1} successfully updated.",v.dataview.invdash!savinvw(v.Local.icount).PART_REV!fieldval, v.dataview.invdash!savinvw(v.Local.icount).LOCATION!fieldval,v.local.sMSG)
+		f.Intrinsic.File.Append2FileNewLine(v.Local.sLogFile,v.Local.sMSG)
+		
+	f.Intrinsic.Control.EndIf
+Function.Intrinsic.String.Concat(v.Ambient.Now,": Update Completed",V.Ambient.Newline,V.Local.sMSG)
+
+f.Intrinsic.File.Append2FileNewLine(v.Local.sLogFile,v.Local.sMSG)
+f.Intrinsic.Control.next(v.Local.icount)
+f.Data.DataTable.Close("savindt")
+f.Data.dataview.Close("invdash","savinvw")
+f.Data.DataTable.SetValue("InvDash",-1,"edit","N")
+f.Intrinsic.UI.Msgbox("Changes have been made. Review log to verify processing ouptut for each flag.")
+v.Local.iHandle.Set(v.Caller.Handle)
+f.Intrinsic.Task.ShellExec(v.Caller.Handle,"Open",v.Local.sLogFile,"","",1)
+Function.Intrinsic.UI.CloseWaitDialog
+
+gui.fInvDash..Enabled(true)
+gui.fInvDash..SetFocus
+f.Intrinsic.Control.catch
+f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmdSaveChng_Click.End
+
+Program.Sub.cmdxptoxl_Click.Start
+gui.fXlExport..Show
+Program.Sub.cmdxptoxl_Click.End
+
+Program.Sub.catching.Start
+v.Local.sError.declare(string)
+Function.Intrinsic.String.Concat(v.Ambient.Now,": Project: GCG_5875_InvDash.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",v.Args.sub,V.Ambient.NewLine,"Error Occurred ",V.Args.errorno," with description ",V.args.errordesc,V.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+f.Intrinsic.Control.CallSub(fInvDash_UnLoad)
+Program.Sub.catching.End
+
+Program.Sub.Serialize.Start
+    F.Intrinsic.Control.Try
+    V.Local.sError.Declare
+    
+    V.Local.sSerialize.Declare
+
+    
+    'gvAll
+    Gui.fInvDash.GsGCInvDash.Serialize("InvDashGrid",V.Local.sSerialize)
+    F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"InvDashGrid",5875,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+'    'gvPastDue
+'    Gui.FrmOrderReview.GsGCPastDue.Serialize("gvPastDue",V.Local.sSerialize)
+'    F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVPASTDUE",5875,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+    
+    F.Intrinsic.Control.Catch
+        f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+    F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+    F.Intrinsic.Control.Try
+    V.Local.sError.Declare
+    
+    V.Local.sSerialize.Declare
+    
+'    'Delete old registry records
+'    F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"InvDashGrid",5875,0,5,"",V.Local.sSerialize)
+'    F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+'        F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+'        F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 5875 And Seq < 1000;")
+'        F.ODBC.Connection!common.Close
+'    F.Intrinsic.Control.EndIf
+
+
+    'gvAll
+    F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"InvDashGrid",5875,1000,6,"",V.Local.sSerialize)
+    F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+        Gui.fInvDash.GsGCInvDash.Deserialize(V.Local.sSerialize)
+    F.Intrinsic.Control.EndIf
+'    'gvPastDue
+'    F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVPASTDUE",5875,1000,6,"",V.Local.sSerialize)
+'    F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+'        Gui.FrmOrderReview.GsGCPastDue.Deserialize(V.Local.sSerialize)
+'    F.Intrinsic.Control.EndIf
+    
+    F.Intrinsic.Control.Catch
+       f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+    F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.cboCodeSort_LostFocus.Start
+V.Local.sSortCode.Declare
+F.Intrinsic.Control.Try
+
+V.Local.sSortCode.Set(V.Screen.fNewPrt!cboCodeSort.Text.UCase)
+Gui.fNewPrt.cboCodeSort.Text(V.Local.sSortCode.Left10)
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(catching,"sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cboCodeSort_LostFocus.End
